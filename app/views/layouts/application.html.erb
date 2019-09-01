@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <%= render partial: '/layouts/head' %>
+  <body>
+    <%= flash_messages %>
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
+    <%= render partial: '/layouts/nav' %>
+  </body>
+  <%= javascript_include_tag 'application', defer: true %>
+</html>

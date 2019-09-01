@@ -1,0 +1,30 @@
+<div class="container">
+  <h1><%= t('.title') %></h1>
+  <hr />
+
+  <%= simple_form_for(user_entry,
+                      as: :user_entry,
+                      method: :patch,
+                      url: admin_user_path(user),
+                      wrapper: :horizontal_form) do |form| %>
+    <%= form.input :name,
+                   label_html: { class: 'form-check-label' },
+                   required: false %>
+    <%= form.input :email,
+                   label_html: { class: 'form-check-label' },
+                   required: false %>
+    <%= form.input :is_active,
+                   as: :boolean,
+                   input_html: { class: 'form-check-input' },
+                   label_html: { class: 'form-check-label' },
+                   required: false %>
+    <div class="float-right">
+      <%= form.button :submit,
+                      t('.update'),
+                      class: 'btn btn-primary ml-2' %>
+      <%= link_to t('.back'),
+                  admin_users_path,
+                  class: 'btn btn-outline-secondary ml-2' %>
+    </div>
+  <% end %>
+</div>

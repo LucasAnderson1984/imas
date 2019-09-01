@@ -1,0 +1,30 @@
+<h1 class="text-center"><%= t('.title') %></h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 offset-sm-4">
+      <%= simple_form_for(resource,
+                          as: resource_name,
+                          html: { class: 'form-horizontal' },
+                          url: password_path(resource_name)) do |f| %>
+        <div class="form-group">
+          <%= devise_error_messages! %>
+        </div>
+        <div class="form-group">
+          <%= f.input :email,
+                      autofocus: true,
+                      input_html: { class: 'form-control' },
+                      label: false,
+                      placeholder: t('.email') %>
+        </div>
+        <%= f.button :submit,
+                     t('.submit'),
+                     class: 'btn btn-primary btn-block' %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-sm-4 offset-sm-4">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

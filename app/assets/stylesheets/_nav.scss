@@ -1,0 +1,11 @@
+$shadow-color: rgba(0, 0, 0, .05);
+
+.user-dropdown {
+  margin-top: -1px;
+}
+
+.user-dropdown__gravatar {
+  margin-left: 10px;
+}
+
+.page-header__nav-box-shadow { box-shadow: 0 .25rem .75rem $shadow-color; }

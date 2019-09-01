@@ -1,0 +1,17 @@
+/.bundle
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+/storage/*
+/node_modules
+/yarn-error.log
+/public/assets
+.byebug_history
+/config/application.yml
+/config/database.yml
+/config/master.key
+/coverage
+**/.DS_Store
