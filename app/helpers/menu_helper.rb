@@ -22,7 +22,7 @@ module MenuHelper # :nodoc:
   end
 
   def left_menus
-    []
+    [CommonMenu.new(current_user, self)]
   end
 
   def right_menus

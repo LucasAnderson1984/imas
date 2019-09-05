@@ -28,4 +28,8 @@ module SimpleCrudController # :nodoc:
   def resource_name
     @resource_name ||= controller_name.singularize
   end
+
+  def resources
+    @resources ||= resource_class.all
+  end
 end

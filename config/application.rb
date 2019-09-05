@@ -8,6 +8,10 @@ Bundler.require(*Rails.groups)
 
 module Imas # :nodoc:
   class Application < Rails::Application # :nodoc:
-    config.load_defaults 5.2
+    config.load_defaults 6.0
+
+    config.generators do |g|
+      g.orm :active_record, primary_key_type: :uuid
+    end
   end
 end
