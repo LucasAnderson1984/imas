@@ -13,11 +13,9 @@
 ActiveRecord::Schema.define(version: 2019_09_01_194835) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "pgcrypto"
   enable_extension "plpgsql"
-  enable_extension "uuid-ossp"
 
-  create_table "items", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+  create_table "items", force: :cascade do |t|
     t.uuid "uuid", null: false
     t.string "item_number", null: false
     t.string "item_description"
@@ -28,8 +26,8 @@ ActiveRecord::Schema.define(version: 2019_09_01_194835) do
     t.index ["uuid"], name: "index_items_on_uuid", unique: true
   end
 
-  create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "uuid", null: false
+  create_table "users", force: :cascade do |t|
+    t.uuid "uuid", null: false
     t.string "name", null: false
     t.integer "is_active", default: 1, null: false
     t.string "email", null: false

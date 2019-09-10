@@ -2,7 +2,7 @@
 
 class CreateItems < ActiveRecord::Migration[6.0] # :nodoc:
   def change
-    create_table :items, id: :uuid do |t|
+    create_table :items do |t|
       t.uuid :uuid, null: false
       t.string :item_number, null: false
       t.string :item_description

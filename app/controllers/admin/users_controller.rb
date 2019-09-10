@@ -46,7 +46,7 @@ module Admin
 
       flash[:alert] = t('.failure')
 
-      render_new(user_entry)
+      render_edit(user_entry)
     end
 
     protected

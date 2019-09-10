@@ -2,10 +2,7 @@
 
 class DeviseCreateUsers < ActiveRecord::Migration[6.0] # :nodoc:
   def change
-    enable_extension 'uuid-ossp'
-    enable_extension 'pgcrypto'
-
-    create_table :users, id: :uuid do |t|
+    create_table :users do |t|
       user_setup t
 
       t.timestamps null: false

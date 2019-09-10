@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
 class Item < ApplicationRecord # :nodoc:
-  validates :uuid,
-            :item_number,
+  include Disableable
+
+  validates :item_number,
+            :uuid,
             uniqueness: { case_sensitive: false }
 
-  validates :uuid,
-            :item_number,
+  validates :is_active,
             :item_description,
-            :is_active,
+            :item_number,
+            :uuid,
             presence: true
 end

@@ -12,17 +12,19 @@
     <tr>
       <th><%= t('.columns.item_number') %></th>
       <th><%= t('.columns.item_description') %></th>
+      <th><%= t('.columns.status') %></th>
       <th><%= t('.columns.action') %></th>
     </tr>
   </thead>
   <tbody>
     <% if resources.each do |item| %>
-      <tr id="<%= "item-#{item.uuid}" %>">
-          <td nowrap><%= link_to item.item_number, item_path(item.uuid) %></td>
+      <tr id="<%= "item-#{item.id}" %>">
+          <td nowrap><%= link_to item.item_number, item_path(item.id) %></td>
           <td nowrap><%= item.item_description %></td>
+          <td nowrap><%= item.status %></td>
           <td nowrap>
             <%= link_to '',
-                        edit_item_path(item.uuid),
+                        edit_item_path(item.id),
                         class: 'btn btn-outline-secondary fas fa-edit' %>
           </td>
       </tr>
