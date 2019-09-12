@@ -15,9 +15,7 @@ module SimpleCrudController # :nodoc:
       resource_params.merge(uuid: SecureRandom.uuid)
     )
 
-    if resource.save
-      redirect_to resource_show_path, notice: t('.success') and return
-    end
+    redirect_to resource, notice: t('.success') and return if resource.save
 
     flash[:alert] = t('.failure')
 
@@ -25,7 +23,7 @@ module SimpleCrudController # :nodoc:
   end
 
   def edit
-    render_edit
+    render_edit(existing_resource)
   end
 
   def index
@@ -33,7 +31,7 @@ module SimpleCrudController # :nodoc:
   end
 
   def new
-    render_new
+    render_new(new_resource({}))
   end
 
   def show
@@ -41,15 +39,10 @@ module SimpleCrudController # :nodoc:
   end
 
   def update
-    resource = resource_class.new(item_params)
+    resource = existing_resource
 
-    if resource.valid?
-      resource = existing_resource
-      resource.skip_reconfirmation!
-      resource.update!(resource_params)
-
-      redirect_to item_path(resource), notice: t('.success') and return
-    end
+    redirect_to resource, notice: t('.success') and return \
+      if resource.update(resource_params)
 
     flash[:alert] = t('.failure')
 
@@ -58,32 +51,24 @@ module SimpleCrudController # :nodoc:
 
   protected
 
-  def build_resource
-    resource_class.new(resource_params)
-  end
-
   def existing_resource
     @existing_resource ||= resource_class.find(params[:id])
   end
 
-  def find_resource
-    resource_class.find(params[:id])
+  def new_resource(params)
+    resource_class.new(params)
   end
 
-  def render_edit
-    render :edit, locals: { resource: existing_resource }
+  def render_edit(resource)
+    render :edit, locals: { resource_name.to_sym => resource }
   end
 
   def render_index
-    render :index, locals: { resources: resources }
+    render :index, locals: { controller_name.to_sym => resources }
   end
 
-  def render_new
-    render :new, locals: { resource: resource }
-  end
-
-  def resource
-    @resource ||= params[:id] ? find_resource : build_resource
+  def render_new(resource)
+    render :new, locals: { resource_name.to_sym => resource }
   end
 
   def resource_class
@@ -95,16 +80,6 @@ module SimpleCrudController # :nodoc:
   end
 
   def resource_params
-    return {} if params[resource_name.to_sym].nil?
-
     params.require(resource_name.to_sym).permit(self.class.permitted_params)
-  end
-
-  def resource_show_path
-    [resource_class, 'path'].join('_').to_sym(resource)
-  end
-
-  def resources
-    @resources ||= resource_class.all
   end
 end

@@ -9,7 +9,7 @@ class ItemsController < ApplicationController # :nodoc:
 
   def render_show(existing_item)
     render :show, locals: {
-      resource: ItemPresenter.new(existing_item, view_context)
+      item: ItemPresenter.new(existing_item, view_context)
     }
   end
 

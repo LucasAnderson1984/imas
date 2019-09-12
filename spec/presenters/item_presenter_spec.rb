@@ -11,7 +11,7 @@ RSpec.describe ItemPresenter do
     context 'when item is active' do
       subject { instance.status }
 
-      let(:item) { create(:item, :active, :uuid) }
+      let(:item) { create(:item, :uuid) }
 
       it { is_expected.to eq t('presenters.item.active') }
     end

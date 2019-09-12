@@ -4,10 +4,7 @@ FactoryBot.define do
   factory :item do
     sequence(:item_number) { |n| "#{Faker::Commerce.material} #{n}" }
     item_description { Faker::Commerce.product_name }
-
-    trait :active do
-      is_active { true }
-    end
+    is_active { true }
 
     trait :inactive do
       is_active { false }

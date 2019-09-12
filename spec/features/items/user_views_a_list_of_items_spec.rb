@@ -16,7 +16,7 @@ RSpec.feature 'user views a list of items' do
     end
     given(:current_user) { create(:user, :confirmed) }
     given!(:items) do
-      create_list(:item, 2, :active, :uuid)
+      create_list(:item, 2, :uuid)
     end
 
     scenario 'they see a list of items' do

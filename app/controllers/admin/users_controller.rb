@@ -65,14 +65,12 @@ module Admin
     end
 
     def render_new(user_entry)
-      render :new, locals: {
-        user_entry: user_entry
-      }
+      render :new, locals: { user_entry: user_entry }
     end
 
     def render_show(existing_user)
       render :show, locals: {
-        resource: UserPresenter.new(existing_user, view_context)
+        user: UserPresenter.new(existing_user, view_context)
       }
     end
 

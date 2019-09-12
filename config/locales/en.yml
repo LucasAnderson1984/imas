@@ -54,6 +54,8 @@ en:
     create:
       failure: "I'm sorry, but we were unable to create the item"
       success: 'Thank you, the item has been created'
+    edit:
+      title: 'Update Item'
     index:
       columns:
         action: 'Action'
@@ -89,6 +91,8 @@ en:
     sign_out: 'Sign Out'
   simple_form:
     labels:
+      item:
+        is_active: 'Is active'
       user_entry:
         is_active: 'Is active'
   users:

@@ -19,7 +19,7 @@ RSpec.feature 'user views a item' do
       sign_in_with(user.email, user.password)
     end
 
-    given(:item) { create(:item, :active, :uuid) }
+    given(:item) { create(:item, :uuid) }
 
     scenario 'they see the users details' do
       visit item_path(item)

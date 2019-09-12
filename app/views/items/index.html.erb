@@ -17,7 +17,7 @@
     </tr>
   </thead>
   <tbody>
-    <% if resources.each do |item| %>
+    <% if items.each do |item| %>
       <tr id="<%= "item-#{item.id}" %>">
           <td nowrap><%= link_to item.item_number, item_path(item.id) %></td>
           <td nowrap><%= item.item_description %></td>
