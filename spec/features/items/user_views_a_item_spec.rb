@@ -3,7 +3,7 @@
 require 'rails_helper'
 require_relative '../shared_scenarios'
 
-RSpec.feature 'user views a item' do
+RSpec.feature 'user views an item' do
   given(:user) { create(:user, :confirmed) }
 
   context 'when the user has not signed in' do
