@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-require_relative '../shared_scenarios'
+require_relative '../../shared_scenarios'
 
 RSpec.feature 'user views a list of users' do
   context 'when the user has not signed in' do

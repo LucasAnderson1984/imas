@@ -2,7 +2,7 @@
   <h1 class="float-left my-2"><%= t('.title') %></h1>
   <div class="float-right mt-2">
     <%= link_to t('.new'),
-                new_admin_user_path,
+                new_item_path,
                 class: 'btn btn-outline-primary' %>
   </div>
 </div>
@@ -10,29 +10,27 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= t('.columns.name') %></th>
-      <th><%= t('.columns.email') %></th>
+      <th><%= t('.columns.item_number') %></th>
+      <th><%= t('.columns.item_description') %></th>
       <th><%= t('.columns.status') %></th>
-      <th><%= t('.columns.last_sign_in') %><th>
       <th><%= t('.columns.action') %></th>
     </tr>
   </thead>
   <tbody>
-    <% if users.each do |user| %>
-      <tr id="<%= "user-#{user.id}" %>">
-          <td nowrap><%= link_to user.name, admin_user_path(user.id) %></td>
-          <td nowrap><%= user.email %></td>
-          <td nowrap><%= user.status %></td>
-          <td nowrap><%= user.last_sign_in_at %></td>
+    <% if items.each do |item| %>
+      <tr id="<%= "item-#{item.id}" %>">
+          <td nowrap><%= link_to item.item_number, item_path(item.id) %></td>
+          <td nowrap><%= item.item_description %></td>
+          <td nowrap><%= item.status %></td>
           <td nowrap>
             <%= link_to '',
-                        edit_admin_user_path(user.id),
+                        edit_item_path(item.id),
                         class: 'btn btn-outline-secondary fas fa-edit' %>
           </td>
       </tr>
     <% end.empty? %>
       <tr>
-        <td colspan="4"><%= t('.no_users') %></td>
+        <td colspan="4"><%= t('.no_items') %></td>
       </tr>
     <% end %>
   </tbody>

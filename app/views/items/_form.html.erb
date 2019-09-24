@@ -1,0 +1,27 @@
+<%= simple_form_for(item,
+                    wrapper: :horizontal_form) do |form| %>
+  <%= form.input :item_number,
+                 label: false,
+                 placeholder: t('items.columns.item_number'),
+                 required: false %>
+  <%= form.input :item_description,
+                 label: false,
+                 placeholder: t('items.columns.item_description'),
+                 required: false %>
+  <%= form.input :is_active,
+                 as: :boolean,
+                 input_html: {
+                   checked: true,
+                   class: 'form-check-input '
+                 },
+                 label_html: { class: 'form-check-label' },
+                 required: false %>
+  <div class='float-left'>
+    <%= form.button :submit,
+                    t('items.columns.save'),
+                    class: 'btn btn-primary' %>
+    <%= link_to t('items.columns.back'),
+                items_path,
+                class: 'btn btn-outline-secondary ml-2' %>
+  </div>
+<% end %>

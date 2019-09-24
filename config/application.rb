@@ -8,6 +8,6 @@ Bundler.require(*Rails.groups)
 
 module Imas # :nodoc:
   class Application < Rails::Application # :nodoc:
-    config.load_defaults 5.2
+    config.load_defaults 6.0
   end
 end

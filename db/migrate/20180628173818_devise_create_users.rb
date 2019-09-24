@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-class DeviseCreateUsers < ActiveRecord::Migration[5.2] # :nodoc:
+class DeviseCreateUsers < ActiveRecord::Migration[6.0] # :nodoc:
   def change
-    create_table(:users) do |t|
+    create_table :users do |t|
       user_setup t
 
       t.timestamps null: false
@@ -17,9 +17,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2] # :nodoc:
     table.datetime :confirmed_at
     table.datetime :confirmation_sent_at
     table.string :unconfirmed_email
-    table.integer :failed_attempts, default: 0, null: false
-    table.string :unlock_token
-    table.datetime :locked_at
   end
 
   def invitable_columns(table)
@@ -58,7 +55,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2] # :nodoc:
   end
 
   def user_columns(table)
-    table.string :uuid, null: false
+    table.uuid :uuid, null: false
     table.string :name, null: false
     table.integer :is_active, default: 1, null: false
     table.string :email, null: false

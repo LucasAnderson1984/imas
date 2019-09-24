@@ -35,6 +35,9 @@ en:
         failure: "I'm sorry, but we were unable to update the user"
         success: 'Thank you, the user has been updated'
   presenters:
+    item:
+      active: 'Active'
+      inactive: 'Inactive'
     user:
       active: 'Active'
       inactive: 'Inactive'
@@ -42,19 +45,54 @@ en:
     index:
       title: 'Imas'
       welcome: 'Welcome to Item Maintenance and Sales'
+  items:
+    columns:
+      back: 'Back'
+      item_description: 'Item Description'
+      item_number: 'Item Number'
+      save: 'Save'
+    create:
+      failure: "I'm sorry, but we were unable to create the item"
+      success: 'Thank you, the item has been created'
+    edit:
+      title: 'Update Item'
+    index:
+      columns:
+        action: 'Action'
+        item_description: 'Item Description'
+        item_number: 'Item Number'
+        status: 'Status'
+      new: 'New'
+      no_items: 'No items found'
+      title: 'Items'
+    new:
+      title: 'New Item'
+    show:
+      back: 'Back'
+      edit: 'Edit'
+      labels:
+        item_number: 'Item Number'
+        item_description: 'Item Description'
+        status: 'Status'
+      title: 'Item'
+    update:
+      failure: "I'm sorry, but we were unable to update the item"
+      success: 'Thank you, the item has been updated'
   layouts:
     head:
       title: 'Imas'
     nav:
       home: 'Imas'
-
   menu:
     admin:
       users: 'Users'
+    items: 'Items'
     sign_in: 'Sign In'
     sign_out: 'Sign Out'
   simple_form:
     labels:
+      item:
+        is_active: 'Is active'
       user_entry:
         is_active: 'Is active'
   users:
