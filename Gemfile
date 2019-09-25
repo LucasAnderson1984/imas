@@ -7,7 +7,7 @@ ruby '~> 2.6.4'
 
 gem 'bootsnap', require: false
 gem 'bootstrap'
-gem 'devise'
+gem 'devise', '>= 4.7.1'
 gem 'devise_invitable'
 gem 'figaro'
 gem 'gravatar_image_tag'
