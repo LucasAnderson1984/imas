@@ -5,7 +5,7 @@ FactoryBot.define do
     sequence(:item_number) { |n| "#{Faker::Commerce.material} #{n}" }
     item_description { Faker::Commerce.product_name }
     is_active { true }
-    unit_of_measure { 'eaches' }
+    unit_of_measure { UnitOfMeasure.names.stringify_keys.keys.sample }
 
     trait :inactive do
       is_active { false }
