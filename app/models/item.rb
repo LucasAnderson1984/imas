@@ -10,6 +10,7 @@ class Item < ApplicationRecord # :nodoc:
   validates :is_active,
             :item_description,
             :item_number,
+            :unit_of_measure,
             :uuid,
             presence: true
 end

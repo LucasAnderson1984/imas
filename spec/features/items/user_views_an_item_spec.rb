@@ -31,6 +31,9 @@ RSpec.feature 'user views an item' do
         t('items.show.labels.item_description'), item.item_description
       )
       expect(page).to have_display_field(
+        t('items.show.labels.unit_of_measure'), item.unit_of_measure.titlecase
+      )
+      expect(page).to have_display_field(
         t('items.show.labels.status'),
         t('presenters.item.active')
       )

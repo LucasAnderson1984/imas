@@ -51,6 +51,7 @@ en:
       item_description: 'Item Description'
       item_number: 'Item Number'
       save: 'Save'
+      unit_of_measure: 'Select a Base Unit of Measure'
     create:
       failure: "I'm sorry, but we were unable to create the item"
       success: 'Thank you, the item has been created'
@@ -73,6 +74,7 @@ en:
       labels:
         item_number: 'Item Number'
         item_description: 'Item Description'
+        unit_of_measure: 'Base Unit of Measure'
         status: 'Status'
       title: 'Item'
     update:
