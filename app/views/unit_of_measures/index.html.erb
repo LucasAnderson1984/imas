@@ -1,0 +1,37 @@
+<div class="clearfix">
+  <h1 class="float-left my-2"><%= t('.title') %></h1>
+  <div class="float-right mt-2">
+    <%= link_to t('.new'),
+                new_unit_of_measure_path,
+                class: 'btn btn-outline-primary' %>
+  </div>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= t('.columns.code') %></th>
+      <th><%= t('.columns.action') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if unit_of_measures.each do |unit_of_measure| %>
+      <tr id="<%= "unit_of_measure-#{unit_of_measure.id}" %>">
+          <td nowrap>
+            <%= link_to(
+                  unit_of_measure.code,
+                  unit_of_measure_path(unit_of_measure.id)) %>
+          </td>
+          <td nowrap>
+            <%= link_to '',
+                        edit_unit_of_measure_path(unit_of_measure.id),
+                        class: 'btn btn-outline-secondary fas fa-edit' %>
+          </td>
+      </tr>
+    <% end.empty? %>
+      <tr>
+        <td colspan="4"><%= t('.no_unit_of_measures') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

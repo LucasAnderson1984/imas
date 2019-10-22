@@ -5,14 +5,10 @@ FactoryBot.define do
     sequence(:item_number) { |n| "#{Faker::Commerce.material} #{n}" }
     item_description { Faker::Commerce.product_name }
     is_active { true }
-    unit_of_measure { UnitOfMeasure.names.stringify_keys.keys.sample }
+    uuid { SecureRandom.uuid }
 
     trait :inactive do
       is_active { false }
-    end
-
-    trait :uuid do
-      uuid { SecureRandom.uuid }
     end
   end
 end

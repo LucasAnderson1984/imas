@@ -1,0 +1,15 @@
+<%= simple_form_for(unit_of_measure,
+                    wrapper: :horizontal_form) do |form| %>
+  <%= form.input :code,
+                 label: false,
+                 placeholder: t('unit_of_measures.columns.code'),
+                 required: false %>
+  <div class='float-left'>
+    <%= form.button :submit,
+                    t('unit_of_measures.columns.save'),
+                    class: 'btn btn-primary' %>
+    <%= link_to t('unit_of_measures.columns.back'),
+                items_path,
+                class: 'btn btn-outline-secondary ml-2' %>
+  </div>
+<% end %>

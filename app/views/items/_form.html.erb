@@ -8,11 +8,13 @@
                  label: false,
                  placeholder: t('items.columns.item_description'),
                  required: false %>
-  <%= form.input :unit_of_measure,
-                collection: UnitOfMeasure.names.keys,
-                label: false,
-                prompt: t('items.columns.unit_of_measure'),
-                required: false %>
+  <%= form.input :unit_of_measure_uuid,
+                 collection: UnitOfMeasure.all,
+                 label: false,
+                 label_method: :code,
+                 prompt: t('items.columns.unit_of_measure'),
+                 required: false,
+                 value_method: :uuid %>
   <%= form.input :is_active,
                  as: :boolean,
                  input_html: {

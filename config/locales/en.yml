@@ -63,6 +63,7 @@ en:
         item_description: 'Item Description'
         item_number: 'Item Number'
         status: 'Status'
+        unit_of_measure: 'Unit of Measure'
       new: 'New'
       no_items: 'No items found'
       title: 'Items'
@@ -91,12 +92,43 @@ en:
     items: 'Items'
     sign_in: 'Sign In'
     sign_out: 'Sign Out'
+    unit_of_measures: 'Unit of Measures'
   simple_form:
     labels:
       item:
         is_active: 'Is active'
       user_entry:
         is_active: 'Is active'
+  unit_of_measures:
+    columns:
+      back: 'Back'
+      code: 'Unit of Measure'
+      save: 'Save'
+    create:
+      failure: "I'm sorry, but we were unable to create the unit of measure"
+      success: 'Thank you, the unit of measure has been created'
+    edit:
+      title: 'Update Unit of Measure'
+    index:
+      columns:
+        action: 'Action'
+        code: 'Unit of Measure'
+        status: 'Status'
+      new: 'New'
+      no_unit_of_measures: 'No unit of measures found'
+      title: 'Unit of Measures'
+    new:
+      title: 'New Unit of Measure'
+    show:
+      back: 'Back'
+      edit: 'Edit'
+      labels:
+        code: 'Unit of Measure'
+        status: 'Status'
+      title: 'Unit of Measure'
+    update:
+      failure: "I'm sorry, but we were unable to update the unit of measure"
+      success: 'Thank you, the unit of measure has been updated'
   users:
     confirmations:
       new:

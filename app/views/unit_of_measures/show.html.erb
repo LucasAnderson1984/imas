@@ -1,0 +1,26 @@
+<div class="clearfix">
+  <h1 class="float-left my-0"><%= t('.title') %></h1>
+  <div class="float-right mt-2">
+    <%= link_to t('.edit'),
+                edit_unit_of_measure_path(unit_of_measure.id),
+                class: 'btn btn-outline-secondary ml-2' %>
+    <%= link_to t('.back'),
+                unit_of_measures_path,
+                class: 'btn btn-outline-primary ml-2' %>
+  </div>
+</div>
+
+<hr />
+
+<div>
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label font-weight-bold text-right">
+      <%= t('.labels.code') %>
+    </label>
+    <div class="col-sm-8">
+      <p class="form-control-plaintext">
+        <%= unit_of_measure.code %>
+      </p>
+    </div>
+  </div>
+</div>

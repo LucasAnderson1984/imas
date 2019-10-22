@@ -16,13 +16,14 @@ RSpec.feature 'user creates a new item' do
     end
     given(:current_user) { create(:user, :confirmed) }
     given(:new_details) { attributes_for(:item) }
+    given!(:unit_of_measure) { create(:unit_of_measure) }
 
     scenario 'they see the new item details' do
       visit new_item_path
 
       fill_in :item_item_number, with: new_details[:item_number]
       fill_in :item_item_description, with: new_details[:item_description]
-      select new_details[:unit_of_measure], from: :item_unit_of_measure
+      select unit_of_measure.code, from: :item_unit_of_measure_uuid
       check t('simple_form.labels.item.is_active')
 
       click_on t('items.columns.save')
@@ -34,6 +35,9 @@ RSpec.feature 'user creates a new item' do
       )
       expect(page).to have_display_field(
         t('items.show.labels.item_description'), new_details[:item_description]
+      )
+      expect(page).to have_display_field(
+        t('items.show.labels.unit_of_measure'), unit_of_measure.code
       )
       expect(page).to have_display_field(
         t('items.index.columns.status'),

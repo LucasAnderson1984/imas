@@ -12,6 +12,7 @@
     <tr>
       <th><%= t('.columns.item_number') %></th>
       <th><%= t('.columns.item_description') %></th>
+      <th><%= t('.columns.unit_of_measure') %></th>
       <th><%= t('.columns.status') %></th>
       <th><%= t('.columns.action') %></th>
     </tr>
@@ -21,6 +22,7 @@
       <tr id="<%= "item-#{item.id}" %>">
           <td nowrap><%= link_to item.item_number, item_path(item.id) %></td>
           <td nowrap><%= item.item_description %></td>
+          <td nowrap><%= item.code %></td>
           <td nowrap><%= item.status %></td>
           <td nowrap>
             <%= link_to '',
