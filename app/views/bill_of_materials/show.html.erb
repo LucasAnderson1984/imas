@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @bill_of_material.name %>
+</p>
+
+<p>
+  <strong>Uuid:</strong>
+  <%= @bill_of_material.uuid %>
+</p>
+
+<%= link_to 'Edit', edit_bill_of_material_path(@bill_of_material) %> |
+<%= link_to 'Back', bill_of_materials_path %>

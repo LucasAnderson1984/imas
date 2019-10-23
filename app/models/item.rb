@@ -4,6 +4,7 @@ class Item < ApplicationRecord # :nodoc:
   include Disableable
 
   belongs_to :unit_of_measure
+  belongs_to :bill_of_material
 
   validates :item_number,
             :uuid,

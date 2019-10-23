@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bill Of Materials</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Uuid</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bill_of_materials.each do |bill_of_material| %>
+      <tr>
+        <td><%= bill_of_material.name %></td>
+        <td><%= bill_of_material.uuid %></td>
+        <td><%= link_to 'Show', bill_of_material %></td>
+        <td><%= link_to 'Edit', edit_bill_of_material_path(bill_of_material) %></td>
+        <td><%= link_to 'Destroy', bill_of_material, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bill Of Material', new_bill_of_material_path %>

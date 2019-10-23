@@ -14,6 +14,13 @@
                        prompt: :translate,
                        required: false,
                        value_method: :id %>
+  <%= form.input :bill_of_material_uuid,
+                 collection: BillOfMaterial.all,
+                 label: false,
+                 label_method: :code,
+                 prompt: t('items.columns.bill_of_material'),
+                 required: false,
+                 value_method: :uuid %>
   <%= form.input :is_active,
                  as: :boolean,
                  input_html: {
