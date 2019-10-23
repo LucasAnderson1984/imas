@@ -5,8 +5,8 @@ require_relative '../shared_scenarios'
 
 RSpec.feature 'user updates an existing item' do
   given(:current_user) { create(:user, :confirmed) }
-  given(:item) { create(:item, unit_of_measure_uuid: unit_of_measures[0].uuid) }
-  given!(:unit_of_measures) { create_list(:unit_of_measure, 2) }
+  given(:item) { create(:item) }
+  given!(:unit_of_measure) { create(:unit_of_measure) }
 
   context 'when the user has not signed in' do
     background { visit edit_item_path(item) }
@@ -25,7 +25,7 @@ RSpec.feature 'user updates an existing item' do
 
       fill_in :item_item_number, with: new_details[:item_number]
       fill_in :item_item_description, with: new_details[:item_description]
-      select unit_of_measures[1].code, from: :item_unit_of_measure_uuid
+      select unit_of_measure.code, from: :item_unit_of_measure_id
       uncheck t('simple_form.labels.item.is_active')
 
       click_on t('items.columns.save')
@@ -39,7 +39,7 @@ RSpec.feature 'user updates an existing item' do
         t('items.show.labels.item_description'), new_details[:item_description]
       )
       expect(page).to have_display_field(
-        t('items.show.labels.unit_of_measure'), unit_of_measures[1].code
+        t('items.show.labels.unit_of_measure'), unit_of_measure.code
       )
       expect(page).to have_display_field(
         t('items.show.labels.status'),

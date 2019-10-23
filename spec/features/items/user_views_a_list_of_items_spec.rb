@@ -16,9 +16,8 @@ RSpec.feature 'user views a list of items' do
     end
     given(:current_user) { create(:user, :confirmed) }
     given!(:items) do
-      create_list(:item, 2, unit_of_measure_uuid: unit_of_measure.uuid)
+      create_list(:item, 2)
     end
-    given!(:unit_of_measure) { create(:unit_of_measure) }
 
     scenario 'they see a list of items' do
       visit items_path
@@ -32,7 +31,7 @@ RSpec.feature 'user views a list of items' do
             t('items.index.columns.item_description'), item.item_description
           )
           expect(page).to have_column_value(
-            t('items.index.columns.unit_of_measure'), unit_of_measure.code
+            t('items.index.columns.unit_of_measure'), item.unit_of_measure.code
           )
           expect(page).to have_column_value(
             t('items.index.columns.status'),

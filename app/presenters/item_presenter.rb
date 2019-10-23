@@ -8,7 +8,7 @@ class ItemPresenter # :nodoc:
            :is_active,
            :item_description,
            :item_number,
-           :unit_of_measure_uuid,
+           :unit_of_measure_id,
            :uuid,
            to: :item
 
@@ -17,7 +17,7 @@ class ItemPresenter # :nodoc:
     @view_context = view_context
   end
 
-  def code
+  def unit_of_measure_code
     @item.unit_of_measure.code
   end
 

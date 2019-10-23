@@ -3,9 +3,7 @@
 class Item < ApplicationRecord # :nodoc:
   include Disableable
 
-  belongs_to :unit_of_measure,
-             primary_key: :uuid,
-             foreign_key: :unit_of_measure_uuid
+  belongs_to :unit_of_measure
 
   validates :item_number,
             :uuid,
@@ -14,7 +12,7 @@ class Item < ApplicationRecord # :nodoc:
   validates :is_active,
             :item_description,
             :item_number,
-            :unit_of_measure_uuid,
+            :unit_of_measure,
             :uuid,
             presence: true
 end

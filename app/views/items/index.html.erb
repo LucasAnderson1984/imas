@@ -22,7 +22,7 @@
       <tr id="<%= "item-#{item.id}" %>">
           <td nowrap><%= link_to item.item_number, item_path(item.id) %></td>
           <td nowrap><%= item.item_description %></td>
-          <td nowrap><%= item.code %></td>
+          <td nowrap><%= item.unit_of_measure_code %></td>
           <td nowrap><%= item.status %></td>
           <td nowrap>
             <%= link_to '',

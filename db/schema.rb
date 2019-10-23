@@ -22,8 +22,9 @@ ActiveRecord::Schema.define(version: 2019_09_28_034926) do
     t.integer "is_active", default: 1, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.uuid "unit_of_measure_uuid", null: false
+    t.bigint "unit_of_measure_id", null: false
     t.index ["item_number"], name: "index_items_on_item_number", unique: true
+    t.index ["unit_of_measure_id"], name: "index_items_on_unit_of_measure_id"
     t.index ["uuid"], name: "index_items_on_uuid", unique: true
   end
 
