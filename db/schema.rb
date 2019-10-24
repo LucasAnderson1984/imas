@@ -11,9 +11,17 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2019_09_28_034926) do
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bill_of_materials", force: :cascade do |t|
+    t.uuid "uuid", null: false
+    t.string "code", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["code"], name: "index_bill_of_materials_on_code", unique: true
+    t.index ["uuid"], name: "index_bill_of_materials_on_uuid", unique: true
+  end
 
   create_table "items", force: :cascade do |t|
     t.uuid "uuid", null: false
@@ -23,6 +31,8 @@ ActiveRecord::Schema.define(version: 2019_09_28_034926) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "unit_of_measure_id", null: false
+    t.bigint "bill_of_material_id"
+    t.index ["bill_of_material_id"], name: "index_items_on_bill_of_material_id"
     t.index ["item_number"], name: "index_items_on_item_number", unique: true
     t.index ["unit_of_measure_id"], name: "index_items_on_unit_of_measure_id"
     t.index ["uuid"], name: "index_items_on_uuid", unique: true

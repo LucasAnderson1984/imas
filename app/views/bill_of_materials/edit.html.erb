@@ -1,6 +1,6 @@
-<h1>Editing Bill Of Material</h1>
+<div class="container">
+  <h1><%= t('.title') %></h1>
+  <hr />
 
-<%= render 'form', bill_of_material: @bill_of_material %>
-
-<%= link_to 'Show', @bill_of_material %> |
-<%= link_to 'Back', bill_of_materials_path %>
+  <%= render partial: 'form', locals: { bill_of_material: bill_of_material } %>
+</div>

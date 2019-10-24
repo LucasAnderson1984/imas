@@ -39,6 +39,36 @@ en:
     index:
       title: 'Imas'
       welcome: 'Welcome to Item Maintenance and Sales'
+  bill_of_materials:
+      columns:
+        back: 'Back'
+        code: 'Bill of Material'
+        save: 'Save'
+      create:
+        failure: "I'm sorry, but we were unable to create the bill of material"
+        success: 'Thank you, the bill of material has been created'
+      edit:
+        title: 'Update Bill of Material'
+      index:
+        columns:
+          action: 'Action'
+          code: 'Bill of Material'
+          status: 'Status'
+        new: 'New'
+        no_bill_of_materials: 'No bill of materials found'
+        title: 'Bill of Materials'
+      new:
+        title: 'New Bill of Material'
+      show:
+        back: 'Back'
+        edit: 'Edit'
+        labels:
+          code: 'Bill of Material'
+          status: 'Status'
+        title: 'Bill of Material'
+      update:
+        failure: "I'm sorry, but we were unable to update the bill of material"
+        success: 'Thank you, the bill of material has been updated'
   items:
     create:
       failure: "I'm sorry, but we were unable to create the item"
@@ -63,6 +93,7 @@ en:
   menu:
     admin:
       users: 'Users'
+    bill_of_materials: 'Bill of Materials'
     items: 'Items'
     sign_in: 'Sign In'
     sign_out: 'Sign Out'

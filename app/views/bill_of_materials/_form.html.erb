@@ -1,27 +1,15 @@
-<%= form_with(model: bill_of_material, local: true) do |form| %>
-  <% if bill_of_material.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(bill_of_material.errors.count, "error") %> prohibited this bill_of_material from being saved:</h2>
-
-      <ul>
-        <% bill_of_material.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :uuid %>
-    <%= form.text_field :uuid %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+<%= simple_form_for(bill_of_material,
+                    wrapper: :horizontal_form) do |form| %>
+  <%= form.input :code,
+                 label: false,
+                 placeholder: t('bill_of_materials.columns.code'),
+                 required: false %>
+  <div class='float-left'>
+    <%= form.button :submit,
+                    t('bill_of_materials.columns.save'),
+                    class: 'btn btn-primary' %>
+    <%= link_to t('bill_of_materials.columns.back'),
+                bill_of_materials_path,
+                class: 'btn btn-outline-secondary ml-2' %>
   </div>
 <% end %>
