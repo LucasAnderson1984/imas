@@ -4,7 +4,7 @@ class ItemPresenter # :nodoc:
   attr_reader :item, :view_context
 
   delegate :t, to: :view_context
-  delegate :bill_of_material_uuid,
+  delegate :bill_of_material_id,
            :id,
            :is_active,
            :item_description,
