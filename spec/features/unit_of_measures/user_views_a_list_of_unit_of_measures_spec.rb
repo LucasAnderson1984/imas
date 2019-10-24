@@ -3,7 +3,7 @@
 require 'rails_helper'
 require_relative '../shared_scenarios'
 
-RSpec.feature 'user views a list of unit_of_measures' do
+RSpec.feature 'user views a list of unit of measures' do
   context 'when the user has not signed in' do
     background { visit unit_of_measures_path }
 
@@ -19,7 +19,7 @@ RSpec.feature 'user views a list of unit_of_measures' do
       create_list(:unit_of_measure, 2)
     end
 
-    scenario 'they see a list of unit_of_measures' do
+    scenario 'they see a list of unit of measures' do
       visit unit_of_measures_path
 
       unit_of_measures.each do |unit_of_measure|

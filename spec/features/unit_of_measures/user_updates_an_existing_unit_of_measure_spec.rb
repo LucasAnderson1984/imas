@@ -3,7 +3,7 @@
 require 'rails_helper'
 require_relative '../shared_scenarios'
 
-RSpec.feature 'user updates an existing unit_of_measure' do
+RSpec.feature 'user updates an existing unit of measure' do
   given(:current_user) { create(:user, :confirmed) }
   given(:unit_of_measure) { create(:unit_of_measure) }
 
@@ -19,7 +19,7 @@ RSpec.feature 'user updates an existing unit_of_measure' do
     end
     given(:new_details) { attributes_for(:unit_of_measure) }
 
-    scenario 'they see the unit_of_measures details have been changed' do
+    scenario 'they see the unit of measures details have been changed' do
       visit edit_unit_of_measure_path(unit_of_measure)
 
       fill_in :unit_of_measure_code, with: new_details[:code]

@@ -2,7 +2,7 @@
   <h1 class="float-left my-0"><%= t('.title') %></h1>
   <div class="float-right mt-2">
     <%= link_to t('.edit'),
-                edit_unit_of_measure_path(unit_of_measure.id),
+                edit_unit_of_measure_path(unit_of_measure),
                 class: 'btn btn-outline-secondary ml-2' %>
     <%= link_to t('.back'),
                 unit_of_measures_path,

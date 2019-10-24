@@ -3,7 +3,7 @@
 require 'rails_helper'
 require_relative '../shared_scenarios'
 
-RSpec.feature 'user creates a new unit_of_measure' do
+RSpec.feature 'user creates a new unit of measure' do
   context 'when the user has not signed in' do
     background { visit new_unit_of_measure_path }
 
@@ -17,7 +17,7 @@ RSpec.feature 'user creates a new unit_of_measure' do
     given(:current_user) { create(:user, :confirmed) }
     given(:new_details) { attributes_for(:unit_of_measure) }
 
-    scenario 'they see the new unit_of_measure details' do
+    scenario 'they see the new unit of measure details' do
       visit new_unit_of_measure_path
 
       fill_in :unit_of_measure_code,

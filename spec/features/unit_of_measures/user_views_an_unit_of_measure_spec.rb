@@ -3,7 +3,7 @@
 require 'rails_helper'
 require_relative '../shared_scenarios'
 
-RSpec.feature 'user views an unit_of_measure' do
+RSpec.feature 'user views an unit of measure' do
   given(:user) { create(:user, :confirmed) }
 
   context 'when the user has not signed in' do
@@ -21,7 +21,7 @@ RSpec.feature 'user views an unit_of_measure' do
 
     given(:unit_of_measure) { create(:unit_of_measure) }
 
-    scenario 'they see the users details' do
+    scenario 'they see the unit of measure details' do
       visit unit_of_measure_path(unit_of_measure)
 
       expect(page).to have_display_field(
