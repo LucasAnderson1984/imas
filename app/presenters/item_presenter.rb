@@ -8,17 +8,14 @@ class ItemPresenter # :nodoc:
            :is_active,
            :item_description,
            :item_number,
-           :unit_of_measure_id,
+           :unit_of_measure,
            :uuid,
            to: :item
+  delegate :code, to: :unit_of_measure, prefix: true
 
   def initialize(item, view_context)
     @item = item
     @view_context = view_context
-  end
-
-  def unit_of_measure_code
-    @item.unit_of_measure.code
   end
 
   def status
