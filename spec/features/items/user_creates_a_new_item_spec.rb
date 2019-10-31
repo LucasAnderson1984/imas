@@ -26,22 +26,24 @@ RSpec.feature 'user creates a new item' do
       select unit_of_measure.code, from: :item_unit_of_measure_id
       check t('simple_form.labels.item.is_active')
 
-      click_on t('items.columns.save')
+      click_on t('shared.buttons.save')
 
       expect(page).to have_content(t('items.create.success'))
 
       expect(page).to have_display_field(
-        t('items.show.labels.item_number'), new_details[:item_number]
+        t('activerecord.attributes.items.item_number'),
+        new_details[:item_number]
       )
       expect(page).to have_display_field(
-        t('items.show.labels.item_description'), new_details[:item_description]
+        t('activerecord.attributes.items.item_description'),
+        new_details[:item_description]
       )
       expect(page).to have_display_field(
-        t('items.show.labels.unit_of_measure'),
+        t('activerecord.attributes.unit_of_measures.code'),
         unit_of_measure.code
       )
       expect(page).to have_display_field(
-        t('items.index.columns.status'),
+        t('shared.columns.status'),
         t('presenters.item.active')
       )
     end
@@ -56,7 +58,7 @@ RSpec.feature 'user creates a new item' do
     scenario 'they see the failure message' do
       visit new_item_path
 
-      click_on t('items.columns.save')
+      click_on t('shared.buttons.save')
 
       expect(page).to have_content(t('items.create.failure'))
     end

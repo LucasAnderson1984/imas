@@ -25,16 +25,18 @@ RSpec.feature 'user views an item' do
       visit item_path(item)
 
       expect(page).to have_display_field(
-        t('items.show.labels.item_number'), item.item_number
+        t('activerecord.attributes.items.item_number'), item.item_number
       )
       expect(page).to have_display_field(
-        t('items.show.labels.item_description'), item.item_description
+        t('activerecord.attributes.items.item_description'),
+        item.item_description
       )
       expect(page).to have_display_field(
-        t('items.show.labels.unit_of_measure'), item.unit_of_measure.code
+        t('activerecord.attributes.unit_of_measures.code'),
+        item.unit_of_measure.code
       )
       expect(page).to have_display_field(
-        t('items.show.labels.status'),
+        t('shared.labels.status'),
         t('presenters.item.active')
       )
     end

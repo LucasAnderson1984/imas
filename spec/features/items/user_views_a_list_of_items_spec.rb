@@ -25,16 +25,18 @@ RSpec.feature 'user views a list of items' do
       items.each do |item|
         within("tr#item-#{item.id}") do
           expect(page).to have_column_value(
-            t('items.index.columns.item_number'), item.item_number
+            t('activerecord.attributes.items.item_number'), item.item_number
           )
           expect(page).to have_column_value(
-            t('items.index.columns.item_description'), item.item_description
+            t('activerecord.attributes.items.item_description'),
+            item.item_description
           )
           expect(page).to have_column_value(
-            t('items.index.columns.unit_of_measure'), item.unit_of_measure.code
+            t('activerecord.attributes.unit_of_measures.code'),
+            item.unit_of_measure.code
           )
           expect(page).to have_column_value(
-            t('items.index.columns.status'),
+            t('shared.columns.status'),
             t('presenters.item.active')
           )
         end

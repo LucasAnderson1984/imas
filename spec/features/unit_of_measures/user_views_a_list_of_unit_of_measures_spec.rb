@@ -25,7 +25,8 @@ RSpec.feature 'user views a list of unit of measures' do
       unit_of_measures.each do |unit_of_measure|
         within("tr#unit_of_measure-#{unit_of_measure.id}") do
           expect(page).to have_column_value(
-            t('unit_of_measures.index.columns.code'), unit_of_measure.code
+            t('activerecord.attributes.unit_of_measures.code'),
+            unit_of_measure.code
           )
         end
       end

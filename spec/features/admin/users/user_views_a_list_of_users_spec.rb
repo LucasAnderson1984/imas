@@ -25,13 +25,13 @@ RSpec.feature 'user views a list of users' do
       users.each do |user|
         within("tr#user-#{user.id}") do
           expect(page).to have_column_value(
-            t('admin.users.index.columns.name'), user.name
+            t('activerecord.attributes.admin.users.name'), user.name
           )
           expect(page).to have_column_value(
-            t('admin.users.index.columns.email'), user.email
+            t('activerecord.attributes.admin.users.email'), user.email
           )
           expect(page).to have_column_value(
-            t('admin.users.index.columns.status'),
+            t('shared.labels.status'),
             t('presenters.user.active')
           )
         end

@@ -23,12 +23,12 @@ RSpec.feature 'user creates a new unit of measure' do
       fill_in :unit_of_measure_code,
               with: new_details[:code]
 
-      click_on t('unit_of_measures.columns.save')
+      click_on t('shared.buttons.save')
 
       expect(page).to have_content(t('unit_of_measures.create.success'))
 
       expect(page).to have_display_field(
-        t('unit_of_measures.show.labels.code'),
+        t('activerecord.attributes.unit_of_measures.code'),
         new_details[:code]
       )
     end
@@ -43,7 +43,7 @@ RSpec.feature 'user creates a new unit of measure' do
     scenario 'they see the failure message' do
       visit new_unit_of_measure_path
 
-      click_on t('unit_of_measures.columns.save')
+      click_on t('shared.buttons.save')
 
       expect(page).to have_content(t('unit_of_measures.create.failure'))
     end

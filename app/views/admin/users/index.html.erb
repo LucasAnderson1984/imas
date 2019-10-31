@@ -1,7 +1,7 @@
 <div class="clearfix">
   <h1 class="float-left my-2"><%= t('.title') %></h1>
   <div class="float-right mt-2">
-    <%= link_to t('.new'),
+    <%= link_to t('shared.buttons.new'),
                 new_admin_user_path,
                 class: 'btn btn-outline-primary' %>
   </div>
@@ -10,11 +10,11 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= t('.columns.name') %></th>
-      <th><%= t('.columns.email') %></th>
-      <th><%= t('.columns.status') %></th>
-      <th><%= t('.columns.last_sign_in') %><th>
-      <th><%= t('.columns.action') %></th>
+      <th><%= t('activerecord.attributes.admin.users.name') %></th>
+      <th><%= t('activerecord.attributes.admin.users.email') %></th>
+      <th><%= t('shared.columns.status') %></th>
+      <th><%= t('activerecord.attributes.admin.users.last_sign_in') %><th>
+      <th><%= t('shared.columns.action') %></th>
     </tr>
   </thead>
   <tbody>

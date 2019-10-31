@@ -25,7 +25,7 @@ RSpec.feature 'user views an unit of measure' do
       visit unit_of_measure_path(unit_of_measure)
 
       expect(page).to have_display_field(
-        t('unit_of_measures.show.labels.code'),
+        t('activerecord.attributes.unit_of_measures.code'),
         unit_of_measure.code
       )
     end

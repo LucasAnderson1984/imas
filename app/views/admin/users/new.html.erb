@@ -9,13 +9,16 @@
                       wrapper: :horizontal_form) do |form| %>
     <%= form.input :name,
                    label_html: { class: 'form-check-label' },
+                   placeholder: :translate,
                    required: false %>
     <%= form.input :email,
                    label_html: { class: 'form-check-label' },
+                   placeholder: :translate,
                    required: false %>
     <%= form.input :password,
                    as: :password,
                    label_html: { class: 'form-check-label' },
+                   placeholder: :translate,
                    required: false %>
     <%= form.input :is_active,
                    as: :boolean,
@@ -27,9 +30,9 @@
                    required: false %>
     <div class="float-right">
       <%= form.button :submit,
-                      t('.save'),
+                      t('shared.buttons.save'),
                       class: 'btn btn-primary ml-2' %>
-      <%= link_to t('.back'),
+      <%= link_to t('shared.buttons.back'),
                   admin_users_path,
                   class: 'btn btn-outline-secondary ml-2' %>
     </div>

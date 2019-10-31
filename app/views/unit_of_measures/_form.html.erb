@@ -2,14 +2,14 @@
                     wrapper: :horizontal_form) do |form| %>
   <%= form.input :code,
                  label: false,
-                 placeholder: t('unit_of_measures.columns.code'),
+                 placeholder: :template,
                  required: false %>
   <div class='float-left'>
     <%= form.button :submit,
-                    t('unit_of_measures.columns.save'),
+                    t('shared.buttons.save'),
                     class: 'btn btn-primary' %>
-    <%= link_to t('unit_of_measures.columns.back'),
-                items_path,
+    <%= link_to t('shared.buttons.back'),
+                unit_of_measures_path,
                 class: 'btn btn-outline-secondary ml-2' %>
   </div>
 <% end %>

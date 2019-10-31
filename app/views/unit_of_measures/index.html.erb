@@ -1,7 +1,7 @@
 <div class="clearfix">
   <h1 class="float-left my-2"><%= t('.title') %></h1>
   <div class="float-right mt-2">
-    <%= link_to t('.new'),
+    <%= link_to t('shared.buttons.new'),
                 new_unit_of_measure_path,
                 class: 'btn btn-outline-primary' %>
   </div>
@@ -10,8 +10,8 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= t('.columns.code') %></th>
-      <th><%= t('.columns.action') %></th>
+      <th><%= t('activerecord.attributes.unit_of_measures.code') %></th>
+      <th><%= t('shared.columns.action') %></th>
     </tr>
   </thead>
   <tbody>

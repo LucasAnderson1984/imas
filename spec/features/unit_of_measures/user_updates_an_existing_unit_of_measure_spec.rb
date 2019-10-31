@@ -24,12 +24,12 @@ RSpec.feature 'user updates an existing unit of measure' do
 
       fill_in :unit_of_measure_code, with: new_details[:code]
 
-      click_on t('unit_of_measures.columns.save')
+      click_on t('shared.buttons.save')
 
       expect(page).to have_content(t('unit_of_measures.update.success'))
 
       expect(page).to have_display_field(
-        t('unit_of_measures.show.labels.code'),
+        t('activerecord.attributes.unit_of_measures.code'),
         new_details[:code]
       )
     end
@@ -45,7 +45,7 @@ RSpec.feature 'user updates an existing unit of measure' do
 
       fill_in :unit_of_measure_code, with: nil
 
-      click_on t('unit_of_measures.columns.save')
+      click_on t('shared.buttons.save')
 
       expect(page).to have_content(t('unit_of_measures.update.failure'))
     end
