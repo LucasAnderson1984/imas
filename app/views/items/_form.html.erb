@@ -2,12 +2,18 @@
                     wrapper: :horizontal_form) do |form| %>
   <%= form.input :item_number,
                  label: false,
-                 placeholder: t('items.columns.item_number'),
+                 placeholder: :translate,
                  required: false %>
   <%= form.input :item_description,
                  label: false,
-                 placeholder: t('items.columns.item_description'),
+                 placeholder: :translate,
                  required: false %>
+  <%= form.association :unit_of_measure,
+                       label: false,
+                       label_method: :code,
+                       prompt: :translate,
+                       required: false,
+                       value_method: :id %>
   <%= form.input :is_active,
                  as: :boolean,
                  input_html: {
@@ -18,9 +24,9 @@
                  required: false %>
   <div class='float-left'>
     <%= form.button :submit,
-                    t('items.columns.save'),
+                    t('shared.buttons.save'),
                     class: 'btn btn-primary' %>
-    <%= link_to t('items.columns.back'),
+    <%= link_to t('shared.buttons.back'),
                 items_path,
                 class: 'btn btn-outline-secondary ml-2' %>
   </div>

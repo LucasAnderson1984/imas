@@ -19,19 +19,24 @@ RSpec.feature 'user views an item' do
       sign_in_with(user.email, user.password)
     end
 
-    given(:item) { create(:item, :uuid) }
+    given(:item) { create(:item) }
 
     scenario 'they see the users details' do
       visit item_path(item)
 
       expect(page).to have_display_field(
-        t('items.show.labels.item_number'), item.item_number
+        t('activerecord.attributes.items.item_number'), item.item_number
       )
       expect(page).to have_display_field(
-        t('items.show.labels.item_description'), item.item_description
+        t('activerecord.attributes.items.item_description'),
+        item.item_description
       )
       expect(page).to have_display_field(
-        t('items.show.labels.status'),
+        t('activerecord.attributes.unit_of_measures.code'),
+        item.unit_of_measure.code
+      )
+      expect(page).to have_display_field(
+        t('shared.labels.status'),
         t('presenters.item.active')
       )
     end

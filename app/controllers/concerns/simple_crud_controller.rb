@@ -71,6 +71,10 @@ module SimpleCrudController # :nodoc:
     render :new, locals: { resource_name.to_sym => resource }
   end
 
+  def render_show(resource)
+    render :show, locals: { resource_name.to_sym => resource }
+  end
+
   def resource_class
     @resource_class ||= resource_name.classify.constantize
   end
@@ -81,5 +85,9 @@ module SimpleCrudController # :nodoc:
 
   def resource_params
     params.require(resource_name.to_sym).permit(self.class.permitted_params)
+  end
+
+  def resources
+    @resources ||= resource_class.all
   end
 end

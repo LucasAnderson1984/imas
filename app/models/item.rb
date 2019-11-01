@@ -3,6 +3,8 @@
 class Item < ApplicationRecord # :nodoc:
   include Disableable
 
+  belongs_to :unit_of_measure
+
   validates :item_number,
             :uuid,
             uniqueness: { case_sensitive: false }
@@ -10,6 +12,7 @@ class Item < ApplicationRecord # :nodoc:
   validates :is_active,
             :item_description,
             :item_number,
+            :unit_of_measure,
             :uuid,
             presence: true
 end

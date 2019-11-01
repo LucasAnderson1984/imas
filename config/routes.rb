@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :items, except: :destroy
+  resources :unit_of_measures, except: :destroy
 
   root 'home#index'
 end

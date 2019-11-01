@@ -25,18 +25,18 @@ RSpec.feature 'user updates an existing user' do
       fill_in :user_entry_name, with: new_details[:name]
       uncheck t('simple_form.labels.user_entry.is_active')
 
-      click_on t('admin.users.edit.update')
+      click_on t('shared.buttons.update')
 
       expect(page).to have_content(t('admin.users.update.success'))
 
       expect(page).to have_display_field(
-        t('admin.users.show.labels.name'), new_details[:name]
+        t('activerecord.attributes.admin.users.name'), new_details[:name]
       )
       expect(page).to have_display_field(
-        t('admin.users.show.labels.email'), new_details[:email]
+        t('activerecord.attributes.admin.users.email'), new_details[:email]
       )
       expect(page).to have_display_field(
-        t('admin.users.show.labels.status'),
+        t('shared.labels.status'),
         t('presenters.user.inactive')
       )
     end
@@ -53,7 +53,7 @@ RSpec.feature 'user updates an existing user' do
       fill_in :user_entry_email, with: nil
       fill_in :user_entry_name, with: nil
 
-      click_on t('admin.users.edit.update')
+      click_on t('shared.buttons.update')
 
       expect(page).to have_content(t('admin.users.update.failure'))
     end

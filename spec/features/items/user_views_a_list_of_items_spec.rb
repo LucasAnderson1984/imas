@@ -16,7 +16,7 @@ RSpec.feature 'user views a list of items' do
     end
     given(:current_user) { create(:user, :confirmed) }
     given!(:items) do
-      create_list(:item, 2, :uuid)
+      create_list(:item, 2)
     end
 
     scenario 'they see a list of items' do
@@ -25,13 +25,18 @@ RSpec.feature 'user views a list of items' do
       items.each do |item|
         within("tr#item-#{item.id}") do
           expect(page).to have_column_value(
-            t('items.index.columns.item_number'), item.item_number
+            t('activerecord.attributes.items.item_number'), item.item_number
           )
           expect(page).to have_column_value(
-            t('items.index.columns.item_description'), item.item_description
+            t('activerecord.attributes.items.item_description'),
+            item.item_description
           )
           expect(page).to have_column_value(
-            t('items.index.columns.status'),
+            t('activerecord.attributes.unit_of_measures.code'),
+            item.unit_of_measure.code
+          )
+          expect(page).to have_column_value(
+            t('shared.columns.status'),
             t('presenters.item.active')
           )
         end

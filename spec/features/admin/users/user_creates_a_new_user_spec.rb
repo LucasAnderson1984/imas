@@ -25,18 +25,18 @@ RSpec.feature 'user creates a new user' do
       fill_in :user_entry_password, with: new_details[:password]
       check t('simple_form.labels.user_entry.is_active')
 
-      click_on t('admin.users.new.save')
+      click_on t('shared.buttons.save')
 
       expect(page).to have_content(t('admin.users.create.success'))
 
       expect(page).to have_display_field(
-        t('admin.users.show.labels.name'), new_details[:name]
+        t('activerecord.attributes.admin.users.name'), new_details[:name]
       )
       expect(page).to have_display_field(
-        t('admin.users.show.labels.email'), new_details[:email]
+        t('activerecord.attributes.admin.users.email'), new_details[:email]
       )
       expect(page).to have_display_field(
-        t('admin.users.index.columns.status'),
+        t('shared.labels.status'),
         t('presenters.user.active')
       )
     end
@@ -51,7 +51,7 @@ RSpec.feature 'user creates a new user' do
     scenario 'they see the failure message' do
       visit new_admin_user_path
 
-      click_on t('admin.users.new.save')
+      click_on t('shared.buttons.save')
 
       expect(page).to have_content(t('admin.users.create.failure'))
     end

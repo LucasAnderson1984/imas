@@ -23,13 +23,13 @@ RSpec.feature 'user views a user' do
       visit admin_user_path(user)
 
       expect(page).to have_display_field(
-        t('admin.users.show.labels.name'), user.name
+        t('activerecord.attributes.admin.users.name'), user.name
       )
       expect(page).to have_display_field(
-        t('admin.users.show.labels.email'), user.email
+        t('activerecord.attributes.admin.users.email'), user.email
       )
       expect(page).to have_display_field(
-        t('admin.users.show.labels.status'),
+        t('shared.labels.status'),
         t('presenters.user.active')
       )
     end

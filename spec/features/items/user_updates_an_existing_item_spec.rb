@@ -5,7 +5,8 @@ require_relative '../shared_scenarios'
 
 RSpec.feature 'user updates an existing item' do
   given(:current_user) { create(:user, :confirmed) }
-  given(:item) { create(:item, :uuid) }
+  given(:item) { create(:item) }
+  given!(:unit_of_measure) { create(:unit_of_measure) }
 
   context 'when the user has not signed in' do
     background { visit edit_item_path(item) }
@@ -24,20 +25,27 @@ RSpec.feature 'user updates an existing item' do
 
       fill_in :item_item_number, with: new_details[:item_number]
       fill_in :item_item_description, with: new_details[:item_description]
+      select unit_of_measure.code, from: :item_unit_of_measure_id
       uncheck t('simple_form.labels.item.is_active')
 
-      click_on t('items.columns.save')
+      click_on t('shared.buttons.save')
 
       expect(page).to have_content(t('items.update.success'))
 
       expect(page).to have_display_field(
-        t('items.show.labels.item_number'), new_details[:item_number]
+        t('activerecord.attributes.items.item_number'),
+        new_details[:item_number]
       )
       expect(page).to have_display_field(
-        t('items.show.labels.item_description'), new_details[:item_description]
+        t('activerecord.attributes.items.item_description'),
+        new_details[:item_description]
       )
       expect(page).to have_display_field(
-        t('items.show.labels.status'),
+        t('activerecord.attributes.unit_of_measures.code'),
+        unit_of_measure.code
+      )
+      expect(page).to have_display_field(
+        t('shared.labels.status'),
         t('presenters.item.inactive')
       )
     end
@@ -54,7 +62,7 @@ RSpec.feature 'user updates an existing item' do
       fill_in :item_item_number, with: nil
       fill_in :item_item_description, with: nil
 
-      click_on t('items.columns.save')
+      click_on t('shared.buttons.save')
 
       expect(page).to have_content(t('items.update.failure'))
     end

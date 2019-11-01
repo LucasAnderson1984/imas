@@ -9,7 +9,10 @@ module MenuHelper # :nodoc:
     end
 
     def items
-      [item(t('menu.items'), context.items_path)]
+      [
+        item(t('menu.items'), context.items_path),
+        item(t('menu.unit_of_measures'), context.unit_of_measures_path)
+      ]
     end
   end
 end

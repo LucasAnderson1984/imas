@@ -1,35 +1,29 @@
 en:
+  activerecord:
+      attributes:
+        admin:
+          users:
+            email: 'Email'
+            last_sign_in: 'Last Signed In'
+            name: 'Name'
+        items:
+          item_description: 'Item Description'
+          item_number: 'Item Number'
+        unit_of_measures:
+          code: 'Unit of Measure'
   admin:
     users:
       create:
         failure: "I'm sorry, but we were unable to create the user"
         success: 'Thank you, the user has been created'
       edit:
-        back: 'Back'
         title: 'Update User'
-        update: 'Update'
       index:
-        columns:
-          action: 'Action'
-          email: 'Email'
-          last_sign_in: 'Last Signed In'
-          name: 'Name'
-          status: 'Status'
-        new: 'New'
         no_users: 'No users found'
         title: 'Users'
       new:
-        back: 'Back'
-        save: 'Save'
         title: 'New User'
       show:
-        back: 'Back'
-        edit: 'Edit'
-        labels:
-          email: 'Email'
-          last_sign_in: 'Last Signed In'
-          name: 'Name'
-          status: 'Status'
         title: 'User'
       update:
         failure: "I'm sorry, but we were unable to update the user"
@@ -46,34 +40,17 @@ en:
       title: 'Imas'
       welcome: 'Welcome to Item Maintenance and Sales'
   items:
-    columns:
-      back: 'Back'
-      item_description: 'Item Description'
-      item_number: 'Item Number'
-      save: 'Save'
     create:
       failure: "I'm sorry, but we were unable to create the item"
       success: 'Thank you, the item has been created'
     edit:
       title: 'Update Item'
     index:
-      columns:
-        action: 'Action'
-        item_description: 'Item Description'
-        item_number: 'Item Number'
-        status: 'Status'
-      new: 'New'
       no_items: 'No items found'
       title: 'Items'
     new:
       title: 'New Item'
     show:
-      back: 'Back'
-      edit: 'Edit'
-      labels:
-        item_number: 'Item Number'
-        item_description: 'Item Description'
-        status: 'Status'
       title: 'Item'
     update:
       failure: "I'm sorry, but we were unable to update the item"
@@ -89,12 +66,56 @@ en:
     items: 'Items'
     sign_in: 'Sign In'
     sign_out: 'Sign Out'
+    unit_of_measures: 'Unit of Measures'
   simple_form:
     labels:
       item:
         is_active: 'Is active'
       user_entry:
         is_active: 'Is active'
+    placeholders:
+      item:
+        item_description: 'Item Description'
+        item_number: 'Item Number'
+      unit_of_measure:
+        code: 'Unit of Measure'
+      user_entry:
+        name: 'Name'
+        email: 'Email'
+        password: 'Password'
+    prompts:
+      item:
+        unit_of_measure: 'Base Unit of Measure'
+  shared:
+    buttons:
+      back: 'Back'
+      edit: 'Edit'
+      new: 'New'
+      save: 'Save'
+      update: 'Update'
+    columns:
+      action: 'Action'
+      back: 'Back'
+      save: 'Save'
+      status: 'Status'
+    labels:
+      status: 'Status'
+  unit_of_measures:
+    create:
+      failure: "I'm sorry, but we were unable to create the unit of measure"
+      success: 'Thank you, the unit of measure has been created'
+    edit:
+      title: 'Update Unit of Measure'
+    index:
+      no_unit_of_measures: 'No unit of measures found'
+      title: 'Unit of Measures'
+    new:
+      title: 'New Unit of Measure'
+    show:
+      title: 'Unit of Measure'
+    update:
+      failure: "I'm sorry, but we were unable to update the unit of measure"
+      success: 'Thank you, the unit of measure has been updated'
   users:
     confirmations:
       new:
