@@ -24,12 +24,12 @@ RSpec.feature 'user updates an existing bill of material' do
 
       fill_in :bill_of_material_code, with: new_details[:code]
 
-      click_on t('bill_of_materials.columns.save')
+      click_on t('shared.columns.save')
 
       expect(page).to have_content(t('bill_of_materials.update.success'))
 
       expect(page).to have_display_field(
-        t('bill_of_materials.show.labels.code'),
+        t('activerecord.attributes.bill_of_materials.code'),
         new_details[:code]
       )
     end
@@ -45,7 +45,7 @@ RSpec.feature 'user updates an existing bill of material' do
 
       fill_in :bill_of_material_code, with: nil
 
-      click_on t('bill_of_materials.columns.save')
+      click_on t('shared.columns.save')
 
       expect(page).to have_content(t('bill_of_materials.update.failure'))
     end

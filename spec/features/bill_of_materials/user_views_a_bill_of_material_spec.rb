@@ -25,7 +25,7 @@ RSpec.feature 'user views a bill of material' do
       visit bill_of_material_path(bill_of_material)
 
       expect(page).to have_display_field(
-        t('bill_of_materials.show.labels.code'),
+        t('activerecord.attributes.bill_of_materials.code'),
         bill_of_material.code
       )
     end

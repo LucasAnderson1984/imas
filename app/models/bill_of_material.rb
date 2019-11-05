@@ -11,5 +11,5 @@ class BillOfMaterial < ApplicationRecord # :nodoc:
 
   validates :code,
             :uuid,
-            presence: true            
+            presence: true
 end

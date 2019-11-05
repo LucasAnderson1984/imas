@@ -26,6 +26,7 @@ RSpec.feature 'user updates an existing item' do
       fill_in :item_item_number, with: new_details[:item_number]
       fill_in :item_item_description, with: new_details[:item_description]
       select unit_of_measure.code, from: :item_unit_of_measure_id
+      select '', from: :item_bill_of_material_id
       uncheck t('simple_form.labels.item.is_active')
 
       click_on t('shared.buttons.save')

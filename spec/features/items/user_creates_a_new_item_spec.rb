@@ -14,6 +14,7 @@ RSpec.feature 'user creates a new item' do
     background do
       sign_in_with(current_user.email, current_user.password)
     end
+    given!(:bill_of_material) { create(:bill_of_material) }
     given(:current_user) { create(:user, :confirmed) }
     given(:new_details) { attributes_for(:item) }
     given!(:unit_of_measure) { create(:unit_of_measure) }
@@ -24,6 +25,7 @@ RSpec.feature 'user creates a new item' do
       fill_in :item_item_number, with: new_details[:item_number]
       fill_in :item_item_description, with: new_details[:item_description]
       select unit_of_measure.code, from: :item_unit_of_measure_id
+      select bill_of_material.code, from: :item_bill_of_material_id
       check t('simple_form.labels.item.is_active')
 
       click_on t('shared.buttons.save')

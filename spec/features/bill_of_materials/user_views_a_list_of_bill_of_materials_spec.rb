@@ -25,7 +25,8 @@ RSpec.feature 'user views a list of bill of materials' do
       bill_of_materials.each do |bill_of_material|
         within("tr#bill_of_material-#{bill_of_material.id}") do
           expect(page).to have_column_value(
-            t('bill_of_materials.index.columns.code'), bill_of_material.code
+            t('activerecord.attributes.bill_of_materials.code'),
+            bill_of_material.code
           )
         end
       end

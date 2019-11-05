@@ -13,7 +13,7 @@ class ItemPresenter # :nodoc:
            :uuid,
            to: :item
   delegate :code, to: :unit_of_measure, prefix: true
-  delegate :code, to: :bill_of_material, prefix: true
+  delegate :code, to: :bill_of_material, prefix: true, allow_nil: true
 
   def initialize(item, view_context)
     @item = item
