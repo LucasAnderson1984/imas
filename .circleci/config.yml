@@ -42,9 +42,8 @@ jobs:
 
       # Database setup
       - run: cp config/database.example.yml config/database.yml
-      # - run: bundle exec rake db:create
-      # - run: bundle exec rake db:schema:load
-      - run: bundle exec rake db:migrate RAILS_ENV=test
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:schema:load
 
       # run tests!
       - run:
