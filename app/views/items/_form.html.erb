@@ -14,6 +14,13 @@
                        prompt: :translate,
                        required: false,
                        value_method: :id %>
+  <%= form.association :bill_of_material,
+                       include_blank: true,
+                       label: false,
+                       label_method: :code,
+                       prompt: :translate,
+                       required: false,
+                       value_method: :id %>
   <%= form.input :is_active,
                  as: :boolean,
                  input_html: {

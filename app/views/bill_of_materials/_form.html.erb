@@ -1,0 +1,15 @@
+<%= simple_form_for(bill_of_material,
+                    wrapper: :horizontal_form) do |form| %>
+  <%= form.input :code,
+                 label: false,
+                 placeholder: :template,
+                 required: false %>
+  <div class='float-left'>
+    <%= form.button :submit,
+                    t('shared.buttons.save'),
+                    class: 'btn btn-primary' %>
+    <%= link_to t('shared.buttons.back'),
+                bill_of_materials_path,
+                class: 'btn btn-outline-secondary ml-2' %>
+  </div>
+<% end %>

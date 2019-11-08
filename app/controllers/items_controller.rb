@@ -3,7 +3,8 @@
 class ItemsController < ApplicationController # :nodoc:
   include SimpleCrudController
 
-  permitted_params :is_active,
+  permitted_params :bill_of_material_id,
+                   :is_active,
                    :item_description,
                    :item_number,
                    :unit_of_measure_id

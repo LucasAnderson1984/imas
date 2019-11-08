@@ -41,6 +41,16 @@
   </div>
   <div class="form-group row">
     <label class="col-sm-4 col-form-label font-weight-bold text-right">
+      <%= t('activerecord.attributes.bill_of_materials.code') %>
+    </label>
+    <div class="col-sm-8">
+      <p class="form-control-plaintext">
+        <%= item.bill_of_material_code %>
+      </p>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label font-weight-bold text-right">
       <%= t('shared.labels.status') %>
     </label>
     <div class="col-sm-8">
