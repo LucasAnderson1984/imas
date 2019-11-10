@@ -1,0 +1,36 @@
+<%= simple_form_for(customer,
+                    wrapper: :horizontal_form) do |form| %>
+  <%= form.input :name,
+                 label: false,
+                 placeholder: :template,
+                 required: false %>
+  <%= form.input :address,
+                 label: false,
+                 placeholder: :template,
+                 required: false %>
+  <%= form.input :city,
+                 label: false,
+                 placeholder: :template,
+                 required: false %>
+  <%= form.input :state,
+                 label: false,
+                 placeholder: :template,
+                 required: false %>
+  <%= form.input :zip,
+                 label: false,
+                 placeholder: :template,
+                 required: false %>
+  <%= form.input :country,
+                 as: :string,
+                 label: false,
+                 placeholder: :template,
+                 required: false %>
+  <div class='float-left'>
+    <%= form.button :submit,
+                    t('shared.buttons.save'),
+                    class: 'btn btn-primary' %>
+    <%= link_to t('shared.buttons.back'),
+                customers_path,
+                class: 'btn btn-outline-secondary ml-2' %>
+  </div>
+<% end %>
