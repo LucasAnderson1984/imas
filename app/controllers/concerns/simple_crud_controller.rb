@@ -11,9 +11,7 @@ module SimpleCrudController # :nodoc:
   end
 
   def create
-    resource = resource_class.new(
-      resource_params.merge(uuid: SecureRandom.uuid)
-    )
+    resource = resource_class.new(resource_params)
 
     redirect_to resource, notice: t('.success') and return if resource.save
 

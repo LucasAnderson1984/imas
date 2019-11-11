@@ -3,6 +3,5 @@
 FactoryBot.define do
   factory :bill_of_material do
     code { Faker::Code.sin }
-    uuid { SecureRandom.uuid }
   end
 end

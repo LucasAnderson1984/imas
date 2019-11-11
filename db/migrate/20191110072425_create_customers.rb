@@ -3,7 +3,6 @@
 class CreateCustomers < ActiveRecord::Migration[6.0] # :nodoc:
   def change
     create_table :customers do |t|
-      t.uuid :uuid, index: { unique: true }, null: false
       t.string :name, index: { unique: true }, null: false
       t.string :address
       t.string :city

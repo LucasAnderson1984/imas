@@ -8,7 +8,5 @@ RSpec.describe UnitOfMeasure do
   let(:instance) { build(:unit_of_measure) }
 
   it { is_expected.to validate_presence_of(:code) }
-  it { is_expected.to validate_presence_of(:uuid) }
   it { is_expected.to validate_uniqueness_of(:code).case_insensitive }
-  it { is_expected.to validate_uniqueness_of(:uuid).case_insensitive }
 end

@@ -16,16 +16,13 @@ ActiveRecord::Schema.define(version: 2019_11_10_072425) do
   enable_extension "plpgsql"
 
   create_table "bill_of_materials", force: :cascade do |t|
-    t.uuid "uuid", null: false
     t.string "code", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["code"], name: "index_bill_of_materials_on_code", unique: true
-    t.index ["uuid"], name: "index_bill_of_materials_on_uuid", unique: true
   end
 
   create_table "customers", force: :cascade do |t|
-    t.uuid "uuid", null: false
     t.string "name", null: false
     t.string "address"
     t.string "city"
@@ -35,11 +32,9 @@ ActiveRecord::Schema.define(version: 2019_11_10_072425) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_customers_on_name", unique: true
-    t.index ["uuid"], name: "index_customers_on_uuid", unique: true
   end
 
   create_table "items", force: :cascade do |t|
-    t.uuid "uuid", null: false
     t.string "item_number", null: false
     t.string "item_description"
     t.integer "is_active", default: 1, null: false
@@ -50,16 +45,13 @@ ActiveRecord::Schema.define(version: 2019_11_10_072425) do
     t.index ["bill_of_material_id"], name: "index_items_on_bill_of_material_id"
     t.index ["item_number"], name: "index_items_on_item_number", unique: true
     t.index ["unit_of_measure_id"], name: "index_items_on_unit_of_measure_id"
-    t.index ["uuid"], name: "index_items_on_uuid", unique: true
   end
 
   create_table "unit_of_measures", force: :cascade do |t|
-    t.uuid "uuid", null: false
     t.string "code", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["code"], name: "index_unit_of_measures_on_code", unique: true
-    t.index ["uuid"], name: "index_unit_of_measures_on_uuid", unique: true
   end
 
   create_table "users", force: :cascade do |t|

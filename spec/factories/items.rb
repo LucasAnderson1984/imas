@@ -7,7 +7,6 @@ FactoryBot.define do
     item_description { Faker::Commerce.product_name }
     is_active { true }
     unit_of_measure
-    uuid { SecureRandom.uuid }
 
     trait :inactive do
       is_active { false }

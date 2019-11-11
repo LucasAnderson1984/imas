@@ -8,6 +8,5 @@ FactoryBot.define do
     state { Faker::Address.state_abbr }
     zip { Faker::Address.zip_code[0, 5] }
     country { Faker::Address.country_code }
-    uuid { SecureRandom.uuid }
   end
 end
