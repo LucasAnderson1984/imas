@@ -9,12 +9,20 @@ module MenuHelper # :nodoc:
     end
 
     def items
-      [
-        item(t('menu.bill_of_materials'), context.bill_of_materials_path),
-        item(t('menu.customers'), context.customers_path),
-        item(t('menu.items'), context.items_path),
-        item(t('menu.unit_of_measures'), context.unit_of_measures_path)
-      ]
+      menu_options.each_with_object([]) do |(key, value), results|
+        results << item(t("menu.#{key}"), context.method(value).call)
+      end
+    end
+
+    private
+
+    def menu_options
+      {
+        bill_of_materials: 'bill_of_materials_path',
+        customers: 'customers_path',
+        items: 'items_path',
+        unit_of_measures: 'unit_of_measures_path'
+      }
     end
   end
 end

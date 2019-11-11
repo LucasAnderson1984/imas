@@ -25,6 +25,16 @@
   </div>
   <div class="form-group row">
     <label class="col-sm-4 col-form-label font-weight-bold text-right">
+      <%= t('activerecord.attributes.customers.address') %>
+    </label>
+    <div class="col-sm-8">
+      <p class="form-control-plaintext">
+        <%= customer.address %>
+      </p>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label font-weight-bold text-right">
       <%= t('activerecord.attributes.customers.city') %>
     </label>
     <div class="col-sm-8">
