@@ -9,10 +9,10 @@ module MenuHelper # :nodoc:
     end
 
     def items
-      menu_options.each_with_object([]) do |value, results|
-        results << item(
-          t("menu.#{value}"),
-          context.method("#{value}_path").call
+      menu_options.map do |menu_option|
+        item(
+          t("menu.#{menu_option}"),
+          context.method("#{menu_option}_path").call
         )
       end
     end
