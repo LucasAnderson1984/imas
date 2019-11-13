@@ -9,11 +9,18 @@ module MenuHelper # :nodoc:
     end
 
     def items
-      [
-        item(t('menu.bill_of_materials'), context.bill_of_materials_path),
-        item(t('menu.items'), context.items_path),
-        item(t('menu.unit_of_measures'), context.unit_of_measures_path)
-      ]
+      menu_options.map do |menu_option|
+        item(
+          t("menu.#{menu_option}"),
+          context.method("#{menu_option}_path").call
+        )
+      end
+    end
+
+    private
+
+    def menu_options
+      %w[bill_of_materials customers items unit_of_measures]
     end
   end
 end

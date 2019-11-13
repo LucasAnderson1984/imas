@@ -5,11 +5,6 @@ class UnitOfMeasure < ApplicationRecord # :nodoc:
 
   has_many :items
 
-  validates :code,
-            :uuid,
-            uniqueness: { case_sensitive: false }
-
-  validates :code,
-            :uuid,
-            presence: true
+  validates :code, uniqueness: { case_sensitive: false }
+  validates :code, presence: true
 end

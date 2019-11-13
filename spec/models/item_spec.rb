@@ -11,7 +11,5 @@ RSpec.describe Item do
   it { is_expected.to validate_presence_of(:item_description) }
   it { is_expected.to validate_presence_of(:item_number) }
   it { is_expected.to validate_presence_of(:unit_of_measure) }
-  it { is_expected.to validate_presence_of(:uuid) }
   it { is_expected.to validate_uniqueness_of(:item_number).case_insensitive }
-  it { is_expected.to validate_uniqueness_of(:uuid).case_insensitive }
 end

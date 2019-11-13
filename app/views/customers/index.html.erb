@@ -1,0 +1,47 @@
+<div class="clearfix">
+  <h1 class="float-left my-2"><%= t('.title') %></h1>
+  <div class="float-right mt-2">
+    <%= link_to t('shared.buttons.new'),
+                new_customer_path,
+                class: 'btn btn-outline-primary' %>
+  </div>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= t('activerecord.attributes.customers.name') %></th>
+      <th><%= t('activerecord.attributes.customers.address') %></th>
+      <th><%= t('activerecord.attributes.customers.city') %></th>
+      <th><%= t('activerecord.attributes.customers.state') %></th>
+      <th><%= t('activerecord.attributes.customers.zip') %></th>
+      <th><%= t('activerecord.attributes.customers.country') %></th>
+      <th><%= t('shared.columns.action') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if customers.each do |customer| %>
+      <tr id="<%= "customer-#{customer.id}" %>">
+          <td nowrap>
+            <%= link_to(
+                  customer.name,
+                  customer_path(customer)) %>
+          </td>
+          <td nowrap><%= customer.address %></td>
+          <td nowrap><%= customer.city %></td>
+          <td nowrap><%= customer.state %></td>
+          <td nowrap><%= customer.zip %></td>
+          <td nowrap><%= customer.country %></td>
+          <td nowrap>
+            <%= link_to '',
+                        edit_customer_path(customer),
+                        class: 'btn btn-outline-secondary fas fa-edit' %>
+          </td>
+      </tr>
+    <% end.empty? %>
+      <tr>
+        <td colspan="7"><%= t('.no_customers') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

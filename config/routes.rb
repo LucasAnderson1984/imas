@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :bill_of_materials, except: :destroy
+  resources :customers, except: :destroy
   resources :items, except: :destroy
   resources :unit_of_measures, except: :destroy
 

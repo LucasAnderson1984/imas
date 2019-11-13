@@ -6,14 +6,10 @@ class Item < ApplicationRecord # :nodoc:
   belongs_to :unit_of_measure
   belongs_to :bill_of_material, optional: true
 
-  validates :item_number,
-            :uuid,
-            uniqueness: { case_sensitive: false }
-
+  validates :item_number, uniqueness: { case_sensitive: false }
   validates :is_active,
             :item_description,
             :item_number,
             :unit_of_measure,
-            :uuid,
             presence: true
 end

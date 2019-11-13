@@ -2,17 +2,14 @@
                     wrapper: :horizontal_form) do |form| %>
   <%= form.input :item_number,
                  label: false,
-                 placeholder: :translate,
-                 required: false %>
+                 placeholder: :translate %>
   <%= form.input :item_description,
                  label: false,
-                 placeholder: :translate,
-                 required: false %>
+                 placeholder: :translate %>
   <%= form.association :unit_of_measure,
                        label: false,
                        label_method: :code,
                        prompt: :translate,
-                       required: false,
                        value_method: :id %>
   <%= form.association :bill_of_material,
                        include_blank: true,
@@ -27,8 +24,7 @@
                    checked: true,
                    class: 'form-check-input '
                  },
-                 label_html: { class: 'form-check-label' },
-                 required: false %>
+                 label_html: { class: 'form-check-label' } %>
   <div class='float-left'>
     <%= form.button :submit,
                     t('shared.buttons.save'),
