@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_10_072425) do
+ActiveRecord::Schema.define(version: 2019_11_14_021849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,19 @@ ActiveRecord::Schema.define(version: 2019_11_10_072425) do
     t.index ["bill_of_material_id"], name: "index_items_on_bill_of_material_id"
     t.index ["item_number"], name: "index_items_on_item_number", unique: true
     t.index ["unit_of_measure_id"], name: "index_items_on_unit_of_measure_id"
+  end
+
+  create_table "sales", force: :cascade do |t|
+    t.bigint "customer_id"
+    t.bigint "item_id"
+    t.bigint "unit_of_measure_id"
+    t.date "sales_date"
+    t.integer "sales_quantity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["customer_id"], name: "index_sales_on_customer_id"
+    t.index ["item_id"], name: "index_sales_on_item_id"
+    t.index ["unit_of_measure_id"], name: "index_sales_on_unit_of_measure_id"
   end
 
   create_table "unit_of_measures", force: :cascade do |t|
