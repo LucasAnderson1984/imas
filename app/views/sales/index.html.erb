@@ -1,0 +1,51 @@
+<div class="clearfix">
+  <h1 class="float-left my-2"><%= t('.title') %></h1>
+  <div class="float-right mt-2">
+    <%= link_to t('shared.buttons.new'),
+                new_sale_path,
+                class: 'btn btn-outline-primary' %>
+  </div>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= t('activerecord.attributes.sales.customer_name') %></th>
+      <th><%= t('activerecord.attributes.items.item_number') %></th>
+      <th><%= t('activerecord.attributes.items.item_description') %></th>
+      <th><%= t('activerecord.attributes.unit_of_measures.code') %></th>
+      <th><%= t('activerecord.attributes.sales.sales_date') %></th>
+      <th><%= t('activerecord.attributes.sales.sales_quantity') %></th>
+      <th><%= t('shared.columns.action') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if sales.each do |sales| %>
+      <tr id="<%= "sale-#{sales.id}" %>">
+          <td nowrap>
+            <%= link_to(
+                  sales.customer.name,
+                  customer_path(sales.customer)) %>
+          </td>
+          <td nowrap>
+            <%= link_to(
+                  sales.item.item_number,
+                  item_path(sales.item)) %>
+          </td>
+          <td nowrap><%= sales.item.item_description %></td>
+          <td nowrap><%= sales.unit_of_measure.code %></td>
+          <td nowrap><%= sales.proper_date %></td>
+          <td nowrap><%= sales.delimited_sales_quantity %></td>
+          <td nowrap>
+            <%= link_to '',
+                        sale_path(sales.id),
+                        class: 'btn btn-outline-secondary fas fa-search' %>
+          </td>
+      </tr>
+    <% end.empty? %>
+      <tr>
+        <td colspan="6"><%= t('.no_sales') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
