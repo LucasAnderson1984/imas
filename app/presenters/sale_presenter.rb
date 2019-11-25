@@ -17,7 +17,7 @@ class SalePresenter # :nodoc:
     @view_context = view_context
   end
 
-  def proper_date
+  def name_of_date_string
     @sale.sales_date.strftime('%m/%d/%Y')
   end
 

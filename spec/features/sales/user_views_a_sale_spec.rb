@@ -3,7 +3,7 @@
 require 'rails_helper'
 require_relative '../shared_scenarios'
 
-RSpec.feature 'user views an sale' do
+RSpec.feature 'user views a sale' do
   include ActiveSupport::NumberHelper
 
   given(:user) { create(:user, :confirmed) }

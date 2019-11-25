@@ -5,9 +5,9 @@ class SalesController < ApplicationController # :nodoc:
 
   private
 
-  def render_show(existing_sale)
+  def render_show(sale)
     render :show, locals: {
-      sale: SalePresenter.new(existing_sale, view_context)
+      sale: SalePresenter.new(sale, view_context)
     }
   end
 
