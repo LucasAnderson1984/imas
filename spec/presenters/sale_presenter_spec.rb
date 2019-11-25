@@ -8,9 +8,9 @@ RSpec.describe ItemPresenter do
   let(:instance) { SalePresenter.new(sale, view) }
   let(:sale) { create(:sale) }
 
-  describe '#name_of_date_string' do
+  describe '#sales_date_string' do
     context 'when the date is mm/dd/yyyy' do
-      subject { instance.name_of_date_string }
+      subject { instance.sales_date_string }
 
       it { is_expected.to eq sale.sales_date.strftime('%m/%d/%Y') }
     end
