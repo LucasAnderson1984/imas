@@ -116,11 +116,21 @@ en:
     sign_out: 'Sign Out'
     unit_of_measures: 'Unit of Measures'
   sales:
+    create:
+      failure: "I'm sorry, but we were unable to create the sale"
+      success: 'Thank you, the sale has been created'
+    edit:
+      title: 'Update Sale'
     index:
       no_sales: 'No sales found'
       title: 'Sales'
+    new:
+      title: 'New Sale'
     show:
       title: 'Sale'
+    update:
+      failure: "I'm sorry, but we were unable to update the sale"
+      success: 'Thank you, the sale has been updated'
   simple_form:
     labels:
       item:
@@ -140,6 +150,8 @@ en:
       item:
         item_description: 'Item Description'
         item_number: 'Item Number'
+      sale:
+        sales_quantity: 'Sales Quantity'
       unit_of_measure:
         code: 'Unit of Measure'
       user_entry:
@@ -149,6 +161,10 @@ en:
     prompts:
       item:
         unit_of_measure: 'Base Unit of Measure'
+      sale:
+        customer: 'Please Select a Customer'
+        item: 'Please Select an Item'
+        unit_of_measure: 'Please Select a Unit of Measure'
   shared:
     buttons:
       back: 'Back'
