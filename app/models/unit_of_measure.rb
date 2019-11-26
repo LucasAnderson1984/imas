@@ -3,6 +3,7 @@
 class UnitOfMeasure < ApplicationRecord # :nodoc:
   include Disableable
 
+  has_many :item_unit_of_measures
   has_many :items
 
   validates :code, uniqueness: { case_sensitive: false }
