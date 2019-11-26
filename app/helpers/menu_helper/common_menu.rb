@@ -20,7 +20,7 @@ module MenuHelper # :nodoc:
     private
 
     def menu_options
-      %w[bill_of_materials customers items unit_of_measures]
+      %w[bill_of_materials customers items sales unit_of_measures]
     end
   end
 end

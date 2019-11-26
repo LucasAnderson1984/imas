@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :bill_of_materials, except: :destroy
   resources :customers, except: :destroy
   resources :items, except: :destroy
+  resources :sales, except: :destroy
   resources :unit_of_measures, except: :destroy
 
   root 'home#index'

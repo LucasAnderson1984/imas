@@ -18,6 +18,10 @@ en:
         items:
           item_description: 'Item Description'
           item_number: 'Item Number'
+        sales:
+          customer_name: 'Customer Name'
+          sales_date: 'Sales Date'
+          sales_quantity: 'Sales Quantity'
         unit_of_measures:
           code: 'Unit of Measure'
   admin:
@@ -107,9 +111,16 @@ en:
     bill_of_materials: 'Bill of Materials'
     customers: 'Customers'
     items: 'Items'
+    sales: 'Sales'
     sign_in: 'Sign In'
     sign_out: 'Sign Out'
     unit_of_measures: 'Unit of Measures'
+  sales:
+    index:
+      no_sales: 'No sales found'
+      title: 'Sales'
+    show:
+      title: 'Sale'
   simple_form:
     labels:
       item:
