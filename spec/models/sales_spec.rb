@@ -7,6 +7,9 @@ RSpec.describe Item do
 
   let(:instance) { build(:sale) }
 
+  it { is_expected.to belong_to(:customer) }
+  it { is_expected.to belong_to(:item) }
+  it { is_expected.to belong_to(:unit_of_measure) }
   it { is_expected.to validate_presence_of(:customer) }
   it { is_expected.to validate_presence_of(:item) }
   it { is_expected.to validate_presence_of(:sales_date) }
