@@ -15,7 +15,9 @@ Rails.application.routes.draw do
 
   resources :bill_of_materials, except: :destroy
   resources :customers, except: :destroy
-  resources :items, except: :destroy
+  resources :items, except: :destroy, shallow: true do
+    resources :item_unit_of_measures, except: :destroy
+  end
   resources :sales, except: :destroy
   resources :unit_of_measures, except: :destroy
 
