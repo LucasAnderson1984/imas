@@ -115,19 +115,16 @@ SimpleForm.setup do |config|
 
   config.wrappers :vertical_multi_select,
                   tag: 'div',
-                  class: 'form-group',
+                  class: 'form-group row',
                   error_class: 'form-group-invalid',
                   valid_class: 'form-group-valid' do |b|
     b.use :html5
     b.optional :readonly
     b.use :label, class: 'form-control-label'
     b.wrapper tag: 'div',
-              class: 'd-flex' \
-                     'flex-row' \
-                     'justify-content-between' \
-                     'align-items-center' do |ba|
+              class: 'col-sm-8' do |ba|
       ba.use :input,
-             class: 'form-control mx-1',
+             class: 'form-control',
              error_class: 'is-invalid',
              valid_class: 'is-valid'
     end

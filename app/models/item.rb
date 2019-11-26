@@ -12,4 +12,8 @@ class Item < ApplicationRecord # :nodoc:
             :item_number,
             :unit_of_measure,
             presence: true
+
+  def full_item_description
+    [item_number, '-', item_description].join(' ')
+  end
 end

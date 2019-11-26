@@ -3,6 +3,12 @@
 class SalesController < ApplicationController # :nodoc:
   include SimpleCrudController
 
+  permitted_params :customer_id,
+                   :item_id,
+                   :sales_date,
+                   :sales_quantity,
+                   :unit_of_measure_id
+
   private
 
   def render_show(sale)

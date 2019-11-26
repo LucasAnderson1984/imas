@@ -1,0 +1,33 @@
+<%= simple_form_for(sale,
+                    wrapper: :horizontal_form) do |form| %>
+  <%= form.association :customer,
+                       label: false,
+                       label_method: :name,
+                       prompt: :translate,
+                       value_method: :id %>
+  <%= form.association :item,
+                       label: false,
+                       label_method: :full_item_description,
+                       prompt: :translate,
+                       value_method: :id %>
+  <%= form.association :unit_of_measure,
+                       label: false,
+                       label_method: :code,
+                       prompt: :translate,
+                       value_method: :id %>
+  <%= form.input :sales_date,
+                 as: :date,
+                 html5: true,
+                 label: false %>
+  <%= form.input :sales_quantity,
+                 label: false,
+                 prompt: :translate %>
+  <div class='float-left'>
+    <%= form.button :submit,
+                    t('shared.buttons.save'),
+                    class: 'btn btn-primary' %>
+    <%= link_to t('shared.buttons.back'),
+                sales_path,
+                class: 'btn btn-outline-secondary ml-2' %>
+  </div>
+<% end %>
