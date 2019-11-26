@@ -8,6 +8,8 @@ class Item < ApplicationRecord # :nodoc:
 
   has_many :item_unit_of_measures
 
+  has_many :sales
+
   validates :item_number, uniqueness: { case_sensitive: false }
 
   validates :is_active,

@@ -7,6 +7,7 @@ RSpec.describe Customer do
 
   let(:instance) { build(:customer) }
 
+  it { is_expected.to have_many(:sales) }
   it { is_expected.to validate_presence_of(:name) }
   it { is_expected.to validate_uniqueness_of(:name).case_insensitive }
   it { is_expected.to validate_length_of(:state).is_equal_to(2) }

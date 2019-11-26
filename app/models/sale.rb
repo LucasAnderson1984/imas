@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class Sale < ApplicationRecord # :nodoc:
-  include Disableable
-
   belongs_to :customer
   belongs_to :item
   belongs_to :unit_of_measure
