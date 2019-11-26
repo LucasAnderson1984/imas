@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_14_021849) do
+ActiveRecord::Schema.define(version: 2019_11_26_020645) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,16 @@ ActiveRecord::Schema.define(version: 2019_11_14_021849) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_customers_on_name", unique: true
+  end
+
+  create_table "item_unit_of_measures", force: :cascade do |t|
+    t.bigint "item_id"
+    t.bigint "unit_of_measure_id"
+    t.integer "base_conversion"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_item_unit_of_measures_on_item_id"
+    t.index ["unit_of_measure_id"], name: "index_item_unit_of_measures_on_unit_of_measure_id"
   end
 
   create_table "items", force: :cascade do |t|

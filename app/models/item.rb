@@ -3,12 +3,15 @@
 class Item < ApplicationRecord # :nodoc:
   include Disableable
 
-  belongs_to :unit_of_measure
   belongs_to :bill_of_material, optional: true
+  belongs_to :unit_of_measure
+
+  has_many :item_unit_of_measures
 
   has_many :sales
 
   validates :item_number, uniqueness: { case_sensitive: false }
+
   validates :is_active,
             :item_description,
             :item_number,
