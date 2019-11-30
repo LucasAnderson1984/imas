@@ -3,7 +3,7 @@
 require 'rails_helper'
 require_relative '../../shared_scenarios'
 
-RSpec.feature 'user views a list of item unit of measures' do
+RSpec.feature 'user views a list of an item\'s unit of measures' do
   given(:item) { create(:item) }
 
   context 'when the user has not signed in' do
