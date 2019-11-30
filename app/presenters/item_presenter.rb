@@ -10,6 +10,7 @@ class ItemPresenter # :nodoc:
            :item_description,
            :item_number,
            :unit_of_measure,
+           :item_unit_of_measures,
            to: :item
   delegate :code, to: :unit_of_measure, prefix: true
   delegate :code, to: :bill_of_material, prefix: true, allow_nil: true
