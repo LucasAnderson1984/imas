@@ -4,7 +4,7 @@ class CreateItemUnitOfMeasureTrigger < ActiveRecord::Migration[6.0] # :nodoc:
   def up
     ActiveRecord::Base.connection.execute(
       <<-SQL
-        CREATE or REPLACE FUNCTION insert_item_unit_of_measure()
+        CREATE OR REPLACE FUNCTION insert_item_unit_of_measure()
         RETURNS trigger AS $$
           BEGIN
             INSERT INTO item_unit_of_measures(
