@@ -7,3 +7,7 @@ Item Manufacturing and Sales
 
 # Purpose
 This is a project for CSU Fresno CSCI 226. The concept is to show how relational databases work. The project is going to use a real world example of how items are built from raw materials and then selling those items to customers.
+
+# Trigger
+There is a trigger that adds an item and it's unit of measure to the item unit of
+measure table after an item gets created.

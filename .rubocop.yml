@@ -10,5 +10,8 @@ Metrics/BlockLength:
     - 'config/initializers/simple_form.rb'
     - 'config/initializers/simple_form_bootstrap.rb'
     - 'spec/**/*.rb'
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/*'
 Style/AndOr:
   EnforcedStyle: conditionals

@@ -1,0 +1,39 @@
+<div class="clearfix">
+  <h1 class="float-left my-2"><%= t('.title') %></h1>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= t('activerecord.attributes.unit_of_measures.code') %></th>
+      <th>
+        <%=
+          t(
+            'activerecord' \
+            '.attributes' \
+            '.items' \
+            '.item_unit_of_measures' \
+            '.base_conversion'
+          )
+        %>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if item.item_unit_of_measures.each do |item_unit_of_measure| %>
+      <tr id="<%= "item_unit_of_measure-#{item_unit_of_measure.id}" %>">
+        <td nowrap>
+          <%= link_to  item_unit_of_measure.unit_of_measure.code,
+                       unit_of_measure_path(
+                         item_unit_of_measure.unit_of_measure_id
+                       ) %>
+        </td>
+        <td nowrap><%= item_unit_of_measure.base_conversion %></td>
+      </tr>
+    <% end.empty? %>
+      <tr>
+        <td colspan="2"><%= t('.no_item_unit_of_measures') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
