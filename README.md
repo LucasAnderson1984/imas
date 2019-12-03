@@ -11,21 +11,3 @@ This is a project for CSU Fresno CSCI 226. The concept is to show how relational
 # Trigger
 There is a trigger that adds an item and it's unit of measure to the item unit of
 measure table after an item gets created.
-
-```
-create or replace function insert_item_unit_of_measure() returns trigger AS $$
-begin
-insert into item_unit_of_measures (item_id, unit_of_measure_id, base_conversion, created_at, updated_at)
-values
-(new.id, new.unit_of_measure_id, 1, current_timestamp, current_timestamp);
-return new;
-end;
-$$
-language plpgsql;
-
-create trigger insert_item_unit_of_measure
-after insert
-on items
-for each row
-execute procedure insert_item_unit_of_measure();
-```
