@@ -86,6 +86,6 @@ module SimpleCrudController # :nodoc:
   end
 
   def resources
-    @resources ||= resource_class.all
+    @resources ||= resource_class.all.page(params[:page])
   end
 end
