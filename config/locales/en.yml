@@ -100,9 +100,19 @@ en:
     show:
       title: 'Item'
     item_unit_of_measures:
+      create:
+        failure: "I'm sorry, but we were unable to create the item unit of measure"
+        success: 'Thank you, the item unit of measure has been created'
+      edit:
+        title: 'Update Item Unit of Measure'
       index:
         no_item_unit_of_measures: 'No unit of measures found'
         title: 'Unit of Measures'
+      new:
+        title: 'New Item Unit of Measure'
+      update:
+        failure: "I'm sorry, but we were unable to update the item unit of measure"
+        success: 'Thank you, the item unit of measure has been updated'
     update:
       failure: "I'm sorry, but we were unable to update the item"
       success: 'Thank you, the item has been updated'

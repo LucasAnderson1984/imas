@@ -1,5 +1,10 @@
 <div class="clearfix">
   <h1 class="float-left my-2"><%= t('.title') %></h1>
+  <div class="float-right mt-2">
+    <%= link_to t('shared.buttons.new'),
+                new_item_item_unit_of_measure_path(item.id),
+                class: 'btn btn-outline-primary' %>
+  </div>
 </div>
 
 <table class="table table-striped">
@@ -17,6 +22,7 @@
           )
         %>
       </th>
+      <th><%= t('shared.columns.action') %></th>
     </tr>
   </thead>
   <tbody>
@@ -29,10 +35,18 @@
                        ) %>
         </td>
         <td nowrap><%= item_unit_of_measure.base_conversion %></td>
+        <td nowrap>
+          <%= link_to '',
+                      edit_item_item_unit_of_measure_path(
+                        item.id,
+                        item_unit_of_measure.id
+                      ),
+                      class: 'btn btn-outline-secondary fas fa-edit' %>
+        </td>
       </tr>
     <% end.empty? %>
       <tr>
-        <td colspan="2"><%= t('.no_item_unit_of_measures') %></td>
+        <td colspan="3"><%= t('.no_item_unit_of_measures') %></td>
       </tr>
     <% end %>
   </tbody>
