@@ -20,14 +20,11 @@ module Items
     end
 
     def update
-      item_unit_of_measure = existing_resource
-
-      if item_unit_of_measure.update(resource_params)
-        redirect_to item_path(item_unit_of_measure.item_id),
-                    notice: t('.success')
+      if existing_resource.update(resource_params)
+        redirect_to item_path(existing_resource.item_id), notice: t('.success')
       else
         flash[:alert] = t('.failure')
-        render_edit(item_unit_of_measure)
+        render_edit(existing_resource)
       end
     end
 
