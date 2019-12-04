@@ -18,6 +18,8 @@ en:
         items:
           item_description: 'Item Description'
           item_number: 'Item Number'
+          item_unit_of_measures:
+            base_conversion: 'Base Conversion'
         sales:
           customer_name: 'Customer Name'
           sales_date: 'Sales Date'
@@ -97,6 +99,10 @@ en:
       title: 'New Item'
     show:
       title: 'Item'
+    item_unit_of_measures:
+      index:
+        no_item_unit_of_measures: 'No unit of measures found'
+        title: 'Unit of Measures'
     update:
       failure: "I'm sorry, but we were unable to update the item"
       success: 'Thank you, the item has been updated'

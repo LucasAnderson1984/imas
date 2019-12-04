@@ -18,7 +18,11 @@ class SalesController < ApplicationController # :nodoc:
   end
 
   def resources
-    @resources ||= resource_class.all.map do |sale|
+    @resources ||= Kaminari.paginate_array(sales).page(params[:page])
+  end
+
+  def sales
+    @sales ||= resource_class.all.map do |sale|
       SalePresenter.new(sale, view_context)
     end
   end
