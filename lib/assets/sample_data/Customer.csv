@@ -1,0 +1,4 @@
+﻿id,name,address,city,state,zip,country,created_at,updated_at
+1,Costco Wholesale Corporation,999 Lake Dr,Issaquah,WA,98027,US,2019/12/01,2019/12/01
+2,The Kroger Co.,1014 Vine St,Cincinnati,OH,45202,US,2019/12/01,2019/12/01
+3,"WinCo Foods, Inc.",650 N Armstrong Pl,Boise,ID,83704,US,2019/12/01,2019/12/01
